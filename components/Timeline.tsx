@@ -18,12 +18,12 @@ const Timeline: React.FC<TimelineProps> = ({ steps, priceLabel }) => {
   return (
     <div className="relative py-20 px-4 max-w-6xl mx-auto">
       {/* Background Decorative Grid for Architectural Feel */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-           style={{ backgroundImage: 'linear-gradient(#1B3A5C 1px, transparent 1px), linear-gradient(90deg, #1B3A5C 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{ backgroundImage: 'linear-gradient(#1B3A5C 1px, transparent 1px), linear-gradient(90deg, #1B3A5C 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
       {/* Central Line with Gradient */}
       <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-gold/30 to-transparent -translate-x-1/2 hidden md:block" />
-      
+
       <div className="space-y-32 relative">
         {steps.map((step, idx) => (
           <motion.div
@@ -32,9 +32,8 @@ const Timeline: React.FC<TimelineProps> = ({ steps, priceLabel }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: idx * 0.1 }}
-            className={`flex flex-col md:flex-row items-center gap-16 lg:gap-24 ${
-              idx % 2 === 0 ? 'md:flex-row-reverse' : ''
-            }`}
+            className={`flex flex-col md:flex-row items-center gap-16 lg:gap-24 ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''
+              }`}
           >
             {/* Step Content Card */}
             <div className={`md:w-1/2 w-full group`}>
@@ -43,16 +42,16 @@ const Timeline: React.FC<TimelineProps> = ({ steps, priceLabel }) => {
                 <span className="absolute -top-10 -left-10 text-[12rem] font-black text-navy/[0.03] select-none italic">
                   0{idx + 1}
                 </span>
-                
+
                 <div className="relative z-10">
                   <div className="w-20 h-20 bg-navy text-gold rounded-3xl flex items-center justify-center mb-8 transform group-hover:rotate-6 transition-transform duration-500 shadow-xl shadow-navy/20">
                     {step.icon}
                   </div>
-                  
+
                   <h4 className="text-3xl lg:text-4xl font-black text-navy mb-6 leading-tight group-hover:text-gold transition-colors duration-500">
                     {step.title}
                   </h4>
-                  
+
                   <p className="text-xl text-navy/70 font-medium leading-relaxed max-w-md mr-0 ml-auto">
                     {step.desc}
                   </p>
@@ -68,28 +67,37 @@ const Timeline: React.FC<TimelineProps> = ({ steps, priceLabel }) => {
               <div className="w-20 h-20 bg-white rounded-full border-2 border-navy/5 shadow-2xl flex items-center justify-center p-2">
                 <div className="w-full h-full bg-navy rounded-full border-4 border-gold/20 flex items-center justify-center text-gold font-black text-2xl relative overflow-hidden group-hover:border-gold transition-colors duration-500">
                   {idx + 1}
-                  <motion.div 
+                  <motion.div
                     animate={{ scale: [1, 1.5, 1], opacity: [0.2, 0, 0.2] }}
                     transition={{ repeat: Infinity, duration: 2 }}
                     className="absolute inset-0 bg-gold rounded-full"
                   />
                 </div>
               </div>
-              
+
               {/* Connector Path for Mobile (Vertical) */}
               {idx !== steps.length - 1 && (
                 <div className="absolute top-full left-1/2 w-0.5 h-32 bg-gold/20 -translate-x-1/2 md:hidden" />
               )}
             </div>
 
-            {/* Spacer for desktop */}
-            <div className="md:w-1/2 hidden md:block" />
+            {/* Image Placeholder */}
+            <div className="md:w-1/2 w-full mt-12 md:mt-0 p-4 md:p-0">
+              <div className="relative w-full aspect-video rounded-[3rem] overflow-hidden border-8 border-white shadow-2xl group-hover:shadow-gold/20 transition-all duration-500 bg-navy/5 flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-navy/5 to-gold/10" />
+                <span className="text-navy/50 font-bold text-xl text-center px-6 relative z-10 leading-relaxed">
+                  מקום לתמונה
+                  <br />
+                  <span className="text-sm opacity-70">{step.title}</span>
+                </span>
+              </div>
+            </div>
           </motion.div>
         ))}
       </div>
 
       {priceLabel && (
-        <motion.div 
+        <motion.div
           initial={{ scale: 0.95, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           className="mt-40 text-center"

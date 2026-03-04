@@ -162,13 +162,9 @@ const App: React.FC = () => {
               </div>
             </section>
 
-            <section className="py-24 bg-navy text-white relative overflow-hidden">
-              <div className="container mx-auto px-6 max-w-4xl text-center relative z-10">
-                <h2 className="text-4xl md:text-5xl font-black mb-6 text-gold">מוכנים להתחיל?</h2>
-                <p className="text-white/60 text-xl mb-12 font-medium">השאירו פרטים ונחזור אליכם לשיחת ייעוץ ללא עלות וללא התחייבות</p>
-                <div className="bg-white/5 p-8 md:p-12 rounded-[3.5rem] border border-white/10">
-                  <ContactForm />
-                </div>
+            <section className="py-24 bg-white">
+              <div className="container mx-auto px-6 max-w-6xl">
+                <ContactForm />
               </div>
             </section>
           </motion.div>
@@ -252,23 +248,70 @@ const App: React.FC = () => {
               subtitle="הערכים הצבאיים שלנו הם המצפן שמוביל אותנו בכל עסקה ועסקה."
               badge="הסיפור שלנו"
             />
-            <section className="py-24 bg-white">
+
+            {/* Our Story Section */}
+            <section className="py-24 bg-white overflow-hidden">
               <div className="container mx-auto px-6 max-w-6xl">
-                <div className="grid lg:grid-cols-2 gap-20 items-center mb-32 text-right">
-                  <div className="order-2 lg:order-1">
-                    <h2 className="text-4xl font-black text-navy mb-8 border-r-8 border-gold pr-6">מהשטח לנדל״ן</h2>
-                    <p className="text-xl text-navy/70 leading-relaxed mb-6">
-                      עמית ונעם, קצינים במילואים, הקימו את ״צמד ברזל״ מתוך הבנה ששוק הנדל״ן הישראלי צמא לאמינות, שקיפות ומקצועיות ללא פשרות.
-                    </p>
+                <div className="grid lg:grid-cols-2 gap-20 items-center text-right">
+                  <div className="order-2 lg:order-1 relative">
+                    <div className="absolute -right-8 -top-8 w-24 h-24 bg-gold/10 rounded-full blur-2xl pointer-events-none" />
+                    <h2 className="text-4xl md:text-5xl font-black text-navy mb-8 border-r-8 border-gold pr-6 relative z-10">הסיפור שלנו</h2>
+                    <div className="space-y-6 text-lg md:text-xl text-navy/80 leading-relaxed font-medium">
+                      <p>
+                        עמית ונעם, קצינים במילואים, הקימו את ״צמד ברזל״ מתוך הבנה ששוק הנדל״ן הישראלי צמא לאמינות, שקיפות ומקצועיות ללא פשרות.
+                      </p>
+                      <p>
+                        לאחר שנים של פיקוד והובלת מערכות מורכבות, החלטנו לקחת את הערכים שעליהם גדלנו – דייקנות, אחריות, תכנון מקדים וחתירה למגע – וליישם אותם בעולם הנדל״ן. אנחנו מאמינים שקניית דירה היא לא רק עסקה כלכלית, אלא החלטה של פעם בחיים שדורשת שותפים לדרך שאפשר לסמוך עליהם בעיניים עצומות.
+                      </p>
+                      <p>
+                        ״צמד ברזל״ נולד מתוך רצון לשנות את כללי המשחק. לתת ללקוחות שלנו את השקט הנפשי והביטחון שהם נמצאים בידיים הטובות ביותר, בדיוק כמו בשדה הקרב.
+                      </p>
+                    </div>
                   </div>
-                  <div className="order-1 lg:order-2 bg-navy/5 aspect-square rounded-[3rem] flex items-center justify-center relative overflow-hidden">
-                    <Logo className="w-32 h-32" />
+                  <div className="order-1 lg:order-2 relative">
+                    <div className="aspect-[4/5] md:aspect-square bg-navy rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white p-2">
+                      <div className="w-full h-full bg-navy/10 rounded-[2.5rem] flex flex-col items-center justify-center relative overflow-hidden group">
+                        <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy to-navy/90" />
+                        <Logo className="w-40 h-40 relative z-10 group-hover:scale-110 transition-transform duration-700" />
+                        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-gold/20 to-transparent pointer-events-none" />
+                      </div>
+                    </div>
+                    {/* Decorative Elements */}
+                    <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-gold/20 rounded-full blur-3xl -z-10 pointer-events-none" />
                   </div>
                 </div>
-                <IsraeliMap />
               </div>
             </section>
-            <section className="py-24 bg-white">
+
+            {/* Core Values Section */}
+            <section className="py-24 bg-offwhite">
+              <div className="container mx-auto px-6 max-w-6xl text-right">
+                <div className="text-center mb-16">
+                  <h2 className="text-4xl md:text-5xl font-black text-navy mb-4">ערכי הליבה שלנו</h2>
+                  <div className="w-24 h-1.5 bg-gold mx-auto rounded-full" />
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-8">
+                  {[
+                    { title: 'אמינות ללא פשרות', icon: <ShieldCheck size={40} />, desc: 'הבסיס לכל מערכת יחסים שלנו. אנחנו אומרים את האמת נטו, גם כשהיא פחות נוחה כי רק כך בונים אמון ארוך טווח.' },
+                    { title: 'שקיפות מלאה', icon: <Search size={40} />, desc: 'אתם חשופים לכל הנתונים, המספרים והמשמעויות. אצלנו אין אותיות קטנות ואין הפתעות של הרגע האחרון.' },
+                    { title: 'מקצוענות בשטח', icon: <Target size={40} />, desc: 'יורדים לפרטים הקטנים ביותר, מנתחים עסקאות לעומק רב ומביאים תוצאות מוכחות עם 0 מקום לטעויות.' }
+                  ].map((val, idx) => (
+                    <div key={idx} className="bg-white p-10 rounded-[2.5rem] shadow-xl shadow-navy/5 border border-navy/5 hover:-translate-y-2 transition-transform duration-500">
+                      <div className="w-20 h-20 bg-navy text-gold rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-navy/10">
+                        {val.icon}
+                      </div>
+                      <h3 className="text-2xl font-black text-navy mb-4">{val.title}</h3>
+                      <p className="text-lg text-navy/70 leading-relaxed font-medium">{val.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            <Team />
+
+            <section className="py-24 bg-white border-t border-navy/5">
               <div className="container mx-auto px-6 max-w-6xl">
                 <ContactForm />
               </div>
