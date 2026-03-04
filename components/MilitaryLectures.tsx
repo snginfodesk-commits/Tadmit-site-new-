@@ -1,10 +1,57 @@
 
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Play, Mic2 } from 'lucide-react';
 import { MILITARY_LOGOS } from '../constants';
 
 const MilitaryLectures: React.FC = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    let animationId: number;
+    let isInteracting = false;
+
+    const setInteracting = () => { isInteracting = true; };
+    const clearInteracting = () => { isInteracting = false; };
+
+    el.addEventListener('touchstart', setInteracting, { passive: true });
+    el.addEventListener('touchend', clearInteracting);
+    el.addEventListener('touchcancel', clearInteracting);
+
+    const step = () => {
+      if (window.innerWidth < 1024) {
+        // Only run native scrolling loop on mobile
+        const setWidth = el.scrollWidth / 4;
+
+        // Auto scroll if not dragging
+        if (!isInteracting) {
+          el.scrollLeft -= 1; // Smooth slow scroll leftwards (advances RTL items)
+        }
+
+        // Seamless Looping:
+        const currentAbs = Math.abs(el.scrollLeft);
+        if (currentAbs >= setWidth * 2) {
+          el.scrollLeft += setWidth;
+        } else if (currentAbs < 5) {
+          el.scrollLeft -= setWidth;
+        }
+      }
+      animationId = window.requestAnimationFrame(step);
+    };
+
+    animationId = window.requestAnimationFrame(step);
+
+    return () => {
+      window.cancelAnimationFrame(animationId);
+      el.removeEventListener('touchstart', setInteracting);
+      el.removeEventListener('touchend', clearInteracting);
+      el.removeEventListener('touchcancel', clearInteracting);
+    };
+  }, []);
+
   return (
     <section className="bg-navy py-16 md:py-24 relative overflow-hidden border-y border-gold/20">
       <div className="absolute inset-0 opacity-5">
@@ -61,12 +108,15 @@ const MilitaryLectures: React.FC = () => {
       </div>
 
       {/* Marquee Units */}
-      <div className="relative flex overflow-hidden lg:overflow-visible mt-10">
-        <div className="flex items-center gap-6 md:gap-16 py-4 overflow-x-auto pb-8 hide-scrollbar snap-x snap-mandatory flex-nowrap w-full" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-          {[...MILITARY_LOGOS, ...MILITARY_LOGOS].map((unit, i) => (
+      <div className="relative flex overflow-hidden w-full mt-10" dir="rtl">
+        <div
+          ref={scrollRef}
+          className="flex items-center gap-6 md:gap-16 py-4 overflow-x-auto lg:overflow-visible pb-8 lg:pb-4 hide-scrollbar lg:animate-marquee select-none w-max lg:w-[200%]"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+          {[...MILITARY_LOGOS, ...MILITARY_LOGOS, ...MILITARY_LOGOS, ...MILITARY_LOGOS].map((unit, i) => (
             <div
               key={i}
-              className="text-white/20 text-xl md:text-3xl lg:text-4xl font-black tracking-widest hover:text-gold transition-colors duration-500 cursor-pointer uppercase whitespace-nowrap snap-center shrink-0"
+              className="text-white/20 text-xl md:text-3xl lg:text-4xl font-black tracking-widest hover:text-gold transition-colors duration-500 lg:cursor-default uppercase whitespace-nowrap shrink-0 px-2"
             >
               {unit}
             </div>
