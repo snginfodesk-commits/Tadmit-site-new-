@@ -22,7 +22,7 @@ const ContactForm: React.FC = () => {
       <div className="lg:w-1/3 p-8 md:p-12 lg:p-16 bg-gold flex flex-col justify-center text-right text-navy">
         <h2 className="text-3xl lg:text-5xl font-black mb-8 lg:mb-10 leading-tight">בואו נבנה <br />עתיד יחד.</h2>
         <div className="space-y-8 lg:space-y-12">
-          <div className="flex items-center gap-5 justify-end">
+          <div className="flex items-center gap-5 justify-start">
             <div className="text-right">
               <p className="text-xs font-bold uppercase tracking-widest opacity-60 mb-1">טלפון</p>
               <p className="font-black text-2xl">052-123-4567</p>
@@ -34,7 +34,7 @@ const ContactForm: React.FC = () => {
 
           <a
             href="https://wa.me/972521234567"
-            className="flex items-center gap-5 justify-end hover:scale-105 transition-transform group"
+            className="flex items-center gap-5 justify-start hover:scale-105 transition-transform group"
           >
             <div className="text-right">
               <p className="text-xs font-bold uppercase tracking-widest opacity-60 mb-1">וואטסאפ</p>

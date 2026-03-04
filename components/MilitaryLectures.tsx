@@ -61,18 +61,23 @@ const MilitaryLectures: React.FC = () => {
       </div>
 
       {/* Marquee Units */}
-      <div className="relative flex overflow-hidden mt-10">
-        <div className="animate-marquee flex items-center gap-16 whitespace-nowrap py-4">
-          {[...MILITARY_LOGOS, ...MILITARY_LOGOS, ...MILITARY_LOGOS].map((unit, i) => (
+      <div className="relative flex overflow-hidden lg:overflow-visible mt-10">
+        <div className="flex items-center gap-6 md:gap-16 py-4 overflow-x-auto pb-8 hide-scrollbar snap-x snap-mandatory flex-nowrap w-full" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+          {[...MILITARY_LOGOS, ...MILITARY_LOGOS].map((unit, i) => (
             <div
               key={i}
-              className="text-white/20 text-2xl md:text-3xl lg:text-4xl font-black tracking-widest hover:text-gold transition-colors duration-500 cursor-default uppercase"
+              className="text-white/20 text-xl md:text-3xl lg:text-4xl font-black tracking-widest hover:text-gold transition-colors duration-500 cursor-pointer uppercase whitespace-nowrap snap-center shrink-0"
             >
               {unit}
             </div>
           ))}
         </div>
       </div>
+      <style>{`
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </section>
   );
 };

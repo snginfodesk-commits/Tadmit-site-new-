@@ -14,7 +14,6 @@ import WhatsAppButton from './components/WhatsAppButton';
 import IsraeliMap from './components/IsraeliMap';
 import Timeline from './components/Timeline';
 import SubPageHero from './components/SubPageHero';
-import GeminiAssistant from './components/GeminiAssistant';
 import Logo from './components/Logo';
 import FAQ from './components/FAQ';
 import ROICalculator from './components/ROICalculator';
@@ -369,7 +368,6 @@ const App: React.FC = () => {
 
       <Footer onNavigate={navigateTo} />
       <WhatsAppButton />
-      <GeminiAssistant />
 
 
     </div>

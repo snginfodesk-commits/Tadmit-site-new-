@@ -86,9 +86,9 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ x: '100%' }}
+            initial={{ x: '-100%' }}
             animate={{ x: 0 }}
-            exit={{ x: '100%' }}
+            exit={{ x: '-100%' }}
             className="fixed inset-0 bg-navy z-[110] flex flex-col p-8"
           >
             <div className="flex justify-between items-center mb-12">

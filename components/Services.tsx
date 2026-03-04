@@ -5,8 +5,8 @@ import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { SERVICES } from '../constants';
 
 const ServiceIcon: React.FC<{ type: string }> = ({ type }) => {
-  const iconColor = "fill-navy group-hover:fill-gold transition-colors duration-500";
-  const strokeColor = "stroke-navy group-hover:stroke-gold transition-colors duration-500";
+  const iconColor = "fill-navy lg:group-hover:fill-gold transition-colors duration-500";
+  const strokeColor = "stroke-navy lg:group-hover:stroke-gold transition-colors duration-500";
 
   if (type === 'home') {
     return (
@@ -75,17 +75,17 @@ const Services: React.FC<ServicesProps> = ({ navigateTo }) => {
               transition={{ duration: 0.8, delay: idx * 0.2 }}
               className="group relative bg-white/40 backdrop-blur-3xl p-8 lg:p-14 rounded-[3rem] lg:rounded-[4rem] border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:shadow-2xl hover:shadow-navy/10 transition-all duration-700 overflow-hidden flex flex-col"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-navy to-[#0d1e31] translate-y-[101%] group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] -z-10" />
+              <div className="hidden lg:block absolute inset-0 bg-gradient-to-br from-navy to-[#0d1e31] translate-y-[101%] group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] -z-10" />
 
-              <div className="w-28 h-28 bg-white group-hover:bg-navy rounded-3xl flex items-center justify-center mb-10 transition-all duration-500 transform group-hover:scale-105 border border-navy/5 shadow-sm">
+              <div className="w-28 h-28 bg-white lg:group-hover:bg-navy rounded-3xl flex items-center justify-center mb-10 transition-all duration-500 transform lg:group-hover:scale-105 border border-navy/5 shadow-sm">
                 <ServiceIcon type={service.iconType} />
               </div>
 
-              <h3 className="text-2xl md:text-3xl lg:text-5xl font-black text-navy group-hover:text-gold mb-6 transition-colors duration-500 min-h-[1.5em] flex items-center">
+              <h3 className="text-2xl md:text-3xl lg:text-5xl font-black text-navy lg:group-hover:text-gold mb-6 transition-colors duration-500 min-h-[1.5em] flex items-center">
                 {service.title}
               </h3>
 
-              <p className="text-xl text-navy/70 group-hover:text-white/70 font-medium mb-12 leading-relaxed transition-colors duration-500">
+              <p className="text-xl text-navy/70 lg:group-hover:text-white/70 font-medium mb-12 leading-relaxed transition-colors duration-500">
                 {service.description}
               </p>
 
@@ -95,14 +95,14 @@ const Services: React.FC<ServicesProps> = ({ navigateTo }) => {
                     key={i}
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.4 + i * 0.1 }}
-                    className="flex items-center justify-start gap-5 border-b border-navy/5 group-hover:border-white/10 pb-4 transition-colors duration-500"
+                    transition={{ delay: 0.1 + i * 0.1 }}
+                    className={`items-center justify-start gap-5 border-b border-navy/5 lg:group-hover:border-white/10 pb-4 transition-colors duration-500 ${i > 2 ? 'hidden md:flex' : 'flex'}`}
                   >
-                    <div className="w-6 h-6 rounded-full bg-gold/10 group-hover:bg-gold/20 flex items-center justify-center transition-colors">
+                    <div className="w-6 h-6 rounded-full bg-gold/10 lg:group-hover:bg-gold/20 flex items-center justify-center transition-colors shrink-0">
                       <CheckCircle2 className="text-gold" size={16} />
                     </div>
                     <span
-                      className="font-bold text-navy group-hover:text-white text-xl transition-colors duration-500"
+                      className="font-bold text-navy lg:group-hover:text-white text-lg md:text-xl transition-colors duration-500"
                       dangerouslySetInnerHTML={{ __html: bullet }}
                     />
                   </motion.div>
