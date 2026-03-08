@@ -1,25 +1,11 @@
 
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Play, Pause, Mic2 } from 'lucide-react';
+import { Mic2 } from 'lucide-react';
 import { MILITARY_LOGOS } from '../constants';
-import lectureVideo from '../assets/סרטון הרצאה לחיילים.mp4';
 
 const MilitaryLectures: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const handlePlayClick = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
 
   useEffect(() => {
     const el = scrollRef.current;
@@ -106,45 +92,6 @@ const MilitaryLectures: React.FC = () => {
           <div className="w-24 h-1 bg-gold/40 rounded-full" />
         </div>
 
-        {/* Video Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-xs mx-auto mb-16 relative group"
-        >
-          <div className="bg-white/5 rounded-2xl border-2 border-white/10 overflow-hidden relative shadow-3xl cursor-pointer" onClick={handlePlayClick}>
-            <video
-              ref={videoRef}
-              src={lectureVideo}
-              className="w-full h-full object-contain"
-              onEnded={() => setIsPlaying(false)}
-              playsInline
-            />
-
-            {/* Play/Pause Overlay */}
-            {!isPlaying && (
-              <div className="absolute inset-0 flex items-center justify-center bg-navy/40 transition-opacity duration-300">
-                <button className="w-24 h-24 bg-gold text-navy rounded-full flex items-center justify-center shadow-2xl shadow-gold/40 transform group-hover:scale-110 transition-all duration-500 z-20">
-                  <Play fill="currentColor" size={32} className="ml-1" />
-                </button>
-
-                {/* Overlay Text */}
-                <div className="absolute bottom-6 right-6 md:bottom-8 md:right-8 text-right z-10">
-                  <p className="text-gold font-black text-xs md:text-sm uppercase tracking-widest mb-1">צפו בהרצאה</p>
-                  <h4 className="text-white text-xl md:text-2xl font-black">חינוך פיננסי ללוחמים</h4>
-                </div>
-
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent opacity-60 pointer-events-none" />
-              </div>
-            )}
-          </div>
-
-          {/* Decorative frame elements */}
-          <div className="absolute -top-4 -left-4 w-16 h-16 border-t-2 border-l-2 border-gold/30 rounded-tl-2xl -z-10" />
-          <div className="absolute -bottom-4 -right-4 w-16 h-16 border-b-2 border-r-2 border-gold/30 rounded-br-2xl -z-10" />
-        </motion.div>
       </div>
 
       {/* Marquee Units */}
