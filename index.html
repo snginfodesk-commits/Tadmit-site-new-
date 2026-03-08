@@ -4,57 +4,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>צמד ברזל | שקיפות. אמינות. ליווי משקיעים.</title>
+    <title>צמד ברזל | ליווי והשקעות נדל"ן בישראל</title>
+    <meta name="description" content='צמד ברזל – ליווי אישי ומקצועי בהשקעות נדל"ן בישראל. לשעבר קצינים בצבא, היום מלווים אתכם לעסקת הנדל"ן הנכונה. ROI Calculator, קבוצות רכישה, ייעוץ אישי.' />
+    <meta name="keywords" content='נדל"ן ישראל, השקעות נדל"ן, קבוצות רכישה, ליווי נדל"ן, צמד ברזל, ליווי משקיעים, ייעוץ נדל"ן' />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://ironteam.co.il/" />
+
+    <!-- Open Graph / WhatsApp / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ironteam.co.il/" />
+    <meta property="og:title" content='צמד ברזל | ליווי והשקעות נדל"ן בישראל' />
+    <meta property="og:description" content='ליווי אישי ומקצועי בהשקעות נדל"ן. לשעבר קצינים – היום מלווים אתכם לעסקה הנכונה.' />
+    <meta property="og:image" content="https://ironteam.co.il/assets/logo.png" />
+    <meta property="og:locale" content="he_IL" />
+    <meta property="og:site_name" content="צמד ברזל" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content='צמד ברזל | ליווי והשקעות נדל"ן בישראל' />
+    <meta name="twitter:description" content='ליווי אישי ומקצועי בהשקעות נדל"ן. לשעבר קצינים – היום מלווים אתכם לעסקה הנכונה.' />
+    <meta name="twitter:image" content="https://ironteam.co.il/assets/logo.png" />
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "צמד ברזל",
+      "url": "https://ironteam.co.il",
+      "logo": "https://ironteam.co.il/assets/logo.png",
+      "image": "https://ironteam.co.il/assets/logo.png",
+      "description": "ליווי אישי ומקצועי בהשקעות נדל\"ן בישראל. לשעבר קצינים בצבא, היום מלווים אתכם לעסקת הנדל\"ן הנכונה.",
+      "telephone": "+972-54-8654555",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "מנחם בגין 121, מתחם עזריאלי שרונה",
+        "addressLocality": "תל אביב",
+        "addressCountry": "IL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 32.0689,
+        "longitude": 34.7939
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "sameAs": [
+        "https://ironteam.co.il"
+      ],
+      "priceRange": "$$",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Israel"
+      },
+      "founder": [
+        { "@type": "Person", "name": "עמית גולד" },
+        { "@type": "Person", "name": "נועם סדן" }
+      ]
+    }
+    </script>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-61T9GERXEF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-61T9GERXEF');
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              navy: '#1B3A5C',
-              gold: '#D4AF37',
-              offwhite: '#F8F6F1',
-              whatsapp: '#25D366',
-            },
-            fontFamily: {
-              heebo: ['Heebo', 'sans-serif'],
-              inter: ['Inter', 'sans-serif'],
-            },
-          }
-        }
-      }
-    </script>
-    <style>
-      body {
-        font-family: 'Heebo', sans-serif;
-        overflow-x: hidden;
-      }
-      .font-inter {
-        font-family: 'Inter', sans-serif;
-      }
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #f1f1f1;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #1B3A5C;
-        border-radius: 4px;
-      }
-      @keyframes scroll {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(50%); }
-      }
-      .animate-marquee {
-        display: flex;
-        width: 200%;
-        animation: scroll 30s linear infinite;
-      }
-    </style>
   <body class="bg-white text-navy selection:bg-gold/30">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>

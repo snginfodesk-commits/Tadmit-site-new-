@@ -3,17 +3,32 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, Phone, MessageCircle } from 'lucide-react';
 
+const N8N_WEBHOOK_URL = 'https://n8n.srv1270696.hstgr.cloud/webhook/594e4a2d-bc43-4f4d-9f5a-02f28afc9754';
+
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', phone: '', interest: 'ליווי אישי' });
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
-    setTimeout(() => {
+    try {
+      await fetch(N8N_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          interest: formData.interest,
+          timestamp: new Date().toISOString(),
+          source: 'ironteam.co.il',
+        }),
+      });
       setStatus('success');
       setFormData({ name: '', phone: '', interest: 'ליווי אישי' });
-    }, 1500);
+    } catch {
+      setStatus('error');
+    }
   };
 
   return (
@@ -25,7 +40,7 @@ const ContactForm: React.FC = () => {
           <div className="flex items-center gap-5 justify-start">
             <div className="text-right">
               <p className="text-xs font-bold uppercase tracking-widest opacity-60 mb-1">טלפון</p>
-              <p className="font-black text-2xl">052-123-4567</p>
+              <p className="font-black text-2xl">054-8654555</p>
             </div>
             <div className="w-16 h-16 bg-navy/10 rounded-2xl flex items-center justify-center">
               <Phone size={32} />
@@ -33,7 +48,7 @@ const ContactForm: React.FC = () => {
           </div>
 
           <a
-            href="https://wa.me/972521234567"
+            href="https://wa.me/972548654555"
             className="flex items-center gap-5 justify-start hover:scale-105 transition-transform group"
           >
             <div className="text-right">
@@ -111,6 +126,10 @@ const ContactForm: React.FC = () => {
                 </div>
               </div>
             </div>
+
+            {status === 'error' && (
+              <p className="text-red-400 text-sm text-center">שגיאה בשליחה. אנא נסה שוב או צור קשר בטלפון.</p>
+            )}
 
             <button
               disabled={status === 'loading'}

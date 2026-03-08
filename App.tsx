@@ -334,7 +334,7 @@ const App: React.FC = () => {
           </motion.div>
         );
 
-      default:
+      case 'home':
         return (
           <motion.div key="home" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
             <Hero navigateTo={navigateTo} />
@@ -351,6 +351,24 @@ const App: React.FC = () => {
                 <ContactForm />
               </div>
             </section>
+          </motion.div>
+        );
+
+      default:
+        return (
+          <motion.div key="404" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <div className="min-h-screen bg-offwhite flex flex-col items-center justify-center text-center px-6">
+              <div className="text-9xl font-black text-navy/10 mb-4">404</div>
+              <h1 className="text-4xl md:text-5xl font-black text-navy mb-4">הדף לא נמצא</h1>
+              <p className="text-navy/60 text-xl mb-10">נראה שהכתובת שהזנת אינה קיימת. בואו נחזיר לבית.</p>
+              <button
+                onClick={() => navigateTo('home')}
+                className="bg-gold text-navy px-10 py-4 rounded-2xl font-black text-xl hover:scale-105 transition-transform shadow-xl shadow-gold/20 flex items-center gap-3"
+              >
+                <ArrowLeft size={24} />
+                חזרה לבית
+              </button>
+            </div>
           </motion.div>
         );
     }

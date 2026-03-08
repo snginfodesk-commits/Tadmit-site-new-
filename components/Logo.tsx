@@ -13,7 +13,7 @@ const Logo: React.FC<LogoProps> = ({ className = "w-12 h-12" }) => {
   return (
     <div className={`${className} relative flex items-center justify-center overflow-hidden`}>
       <img 
-        src="/assets/logo.png" 
+        src="/assets/logo.webp" 
         alt="צמד ברזל" 
         className="w-full h-full object-contain"
       />

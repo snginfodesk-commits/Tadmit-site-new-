@@ -59,10 +59,10 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className={`font-black text-sm hover:text-gold transition-colors relative group ${textColorClass}`}
+                className={`font-black text-sm hover:text-gold transition-colors relative group ${textColorClass} ${currentPage === link.href ? 'text-gold' : ''}`}
               >
                 {link.label}
-                <span className="absolute -bottom-1 right-0 w-0 h-0.5 bg-gold transition-all group-hover:w-full"></span>
+                <span className={`absolute -bottom-1 right-0 h-0.5 bg-gold transition-all ${currentPage === link.href ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
               </a>
             ))}
           </div>
@@ -105,7 +105,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage }) => {
                 <button
                   key={link.href}
                   onClick={(e) => { setMobileMenuOpen(false); handleLinkClick(e, link.href); }}
-                  className="text-3xl font-bold text-white hover:text-gold transition-colors"
+                  className={`text-3xl font-bold transition-colors ${currentPage === link.href ? 'text-gold' : 'text-white hover:text-gold'}`}
                 >
                   {link.label}
                 </button>
