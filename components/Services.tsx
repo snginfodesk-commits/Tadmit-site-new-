@@ -48,12 +48,12 @@ interface ServicesProps {
 
 const Services: React.FC<ServicesProps> = ({ navigateTo }) => {
   return (
-    <section id="services" className="py-20 md:py-40 bg-white relative overflow-hidden">
+    <section id="services" className="py-10 md:py-16 bg-white relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-navy/5 blur-[150px] rounded-full translate-y-1/2 -translate-x-1/2" />
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <div className="text-center mb-32">
+        <div className="text-center mb-10">
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -73,23 +73,23 @@ const Services: React.FC<ServicesProps> = ({ navigateTo }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: idx * 0.2 }}
-              className="group relative bg-white/40 backdrop-blur-3xl p-8 lg:p-14 rounded-[3rem] lg:rounded-[4rem] border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:shadow-2xl hover:shadow-navy/10 transition-all duration-700 overflow-hidden flex flex-col"
+              className="group relative bg-white/40 backdrop-blur-3xl p-6 lg:p-10 rounded-[3rem] lg:rounded-[4rem] border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:shadow-2xl hover:shadow-navy/10 transition-all duration-700 overflow-hidden flex flex-col"
             >
               <div className="hidden lg:block absolute inset-0 bg-gradient-to-br from-navy to-[#0d1e31] translate-y-[101%] group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] -z-10" />
 
-              <div className="w-28 h-28 bg-white lg:group-hover:bg-navy rounded-3xl flex items-center justify-center mb-10 transition-all duration-500 transform lg:group-hover:scale-105 border border-navy/5 shadow-sm">
+              <div className="w-20 h-20 bg-white lg:group-hover:bg-navy rounded-3xl flex items-center justify-center mb-6 transition-all duration-500 transform lg:group-hover:scale-105 border border-navy/5 shadow-sm">
                 <ServiceIcon type={service.iconType} />
               </div>
 
-              <h3 className="text-2xl md:text-3xl lg:text-5xl font-black text-navy lg:group-hover:text-gold mb-6 transition-colors duration-500 min-h-[1.5em] flex items-center">
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-navy lg:group-hover:text-gold mb-4 transition-colors duration-500 min-h-[1.5em] flex items-center">
                 {service.title}
               </h3>
 
-              <p className="text-xl text-navy/70 lg:group-hover:text-white/70 font-medium mb-12 leading-relaxed transition-colors duration-500">
+              <p className="text-lg text-navy/70 lg:group-hover:text-white/70 font-medium mb-6 leading-relaxed transition-colors duration-500">
                 {service.description}
               </p>
 
-              <div className="w-full space-y-5 text-right mb-14 flex-1">
+              <div className="w-full space-y-3 text-right mb-6 flex-1">
                 {service.bullets.map((bullet, i) => (
                   <motion.div
                     key={i}

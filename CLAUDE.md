@@ -51,6 +51,8 @@ Vite לא מגיש קבצים מהשורש ב-production build.
 | Google Analytics | G-61T9GERXEF |
 | WhatsApp | 972548654555 |
 | טלפון | 054-8654555 |
+| אימייל | SNGinfodesk@gmail.com |
+| כתובת | מנחם בגין 121, מתחם עזריאלי שרונה, תל אביב |
 
 ---
 

@@ -7,6 +7,14 @@ body {
   overflow-x: hidden;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+p, li, button, span {
+  text-wrap: pretty;
+}
+
 .font-inter {
   font-family: "Inter", sans-serif;
 }
@@ -31,4 +39,16 @@ body {
   display: flex;
   width: 200%;
   animation: scroll 30s linear infinite;
+}
+
+/* Accessibility Widget */
+html.a11y-font-lg { font-size: 110%; }
+html.a11y-font-xl { font-size: 125%; }
+html.a11y-contrast { filter: contrast(150%); }
+html.a11y-gray { filter: grayscale(100%); }
+html.a11y-contrast.a11y-gray { filter: contrast(150%) grayscale(100%); }
+html.a11y-links a { text-decoration: underline !important; }
+html.a11y-stop *, html.a11y-stop *::before, html.a11y-stop *::after {
+  animation-play-state: paused !important;
+  transition: none !important;
 }

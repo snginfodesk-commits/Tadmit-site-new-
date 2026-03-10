@@ -11,12 +11,16 @@ import Testimonials from './components/Testimonials';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import AccessibilityWidget from './components/AccessibilityWidget';
 import IsraeliMap from './components/IsraeliMap';
 import Timeline from './components/Timeline';
 import SubPageHero from './components/SubPageHero';
 import Logo from './components/Logo';
 import FAQ from './components/FAQ';
 import ROICalculator from './components/ROICalculator';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsOfUse from './components/TermsOfUse';
+import AccessibilityStatement from './components/AccessibilityStatement';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   FileText, Download, MessageCircle, Phone, Mail, Play,
@@ -96,7 +100,7 @@ const App: React.FC = () => {
                 onClick={() => navigateTo('contact-page')}
                 className="bg-gold text-navy px-12 py-5 rounded-2xl font-black text-xl hover:scale-105 transition-transform inline-block shadow-xl shadow-gold/20"
               >
-                לקביעת שיחת ייעוץ
+                לקביעת פגישת ייעוץ חינמית
               </button>
             </div>
 
@@ -334,6 +338,27 @@ const App: React.FC = () => {
           </motion.div>
         );
 
+      case 'privacy':
+        return (
+          <motion.div key="privacy" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <PrivacyPolicy onNavigate={navigateTo} />
+          </motion.div>
+        );
+
+      case 'terms':
+        return (
+          <motion.div key="terms" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <TermsOfUse onNavigate={navigateTo} />
+          </motion.div>
+        );
+
+      case 'accessibility':
+        return (
+          <motion.div key="accessibility" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <AccessibilityStatement onNavigate={navigateTo} />
+          </motion.div>
+        );
+
       case 'home':
         return (
           <motion.div key="home" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
@@ -386,8 +411,7 @@ const App: React.FC = () => {
 
       <Footer onNavigate={navigateTo} />
       <WhatsAppButton />
-
-
+      <AccessibilityWidget />
     </div>
   );
 };

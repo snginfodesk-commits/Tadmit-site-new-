@@ -27,7 +27,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   <Icon size={18} />
                 </a>
               ))}
-              <a href="https://wa.me/972521234567" className="w-10 h-10 rounded-full bg-whatsapp flex items-center justify-center hover:scale-110 transition-all">
+              <a href="https://wa.me/972548654555" className="w-10 h-10 rounded-full bg-whatsapp flex items-center justify-center hover:scale-110 transition-all">
                 <MessageCircle size={18} />
               </a>
             </div>
@@ -53,10 +53,11 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div className="space-y-6">
             <h4 className="text-xl font-black text-gold">צור קשר</h4>
             <div className="space-y-4 text-white/70 font-bold">
-              <p>תל אביב, ישראל</p>
-              <p>טלפון: 052-123-4567</p>
-              <p>מייל: office@tzamadbarzel.co.il</p>
+              <p>מנחם בגין 121, מתחם עזריאלי שרונה, תל אביב</p>
+              <p>טלפון: 054-8654555</p>
+              <p>מייל: SNGinfodesk@gmail.com</p>
               <p>שעות פעילות: א'-ה' 09:00-18:00</p>
+              <p>ו' 09:00-13:00</p>
             </div>
           </div>
 
@@ -69,7 +70,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 onClick={() => onNavigate('contact-page')}
                 className="bg-gold text-navy font-black px-8 py-3 rounded-xl w-full hover:scale-105 transition-transform"
               >
-                להצטרפות לקבוצת השקט
+                להצטרפות לקבוצת השקטה
               </button>
             </div>
           </div>
@@ -78,9 +79,9 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-white/40 text-sm font-medium">
           <p>© 2024 צמד ברזל - יזמות ונדל"ן. כל הזכויות שמורות.</p>
           <div className="flex gap-8">
-            <a href="#" className="hover:text-gold">מדיניות פרטיות</a>
-            <a href="#" className="hover:text-gold">תנאי שימוש</a>
-            <a href="#" className="hover:text-gold">הצהרת נגישות</a>
+            <button onClick={() => onNavigate('privacy')} className="hover:text-gold transition-colors">מדיניות פרטיות</button>
+            <button onClick={() => onNavigate('terms')} className="hover:text-gold transition-colors">תנאי שימוש</button>
+            <button onClick={() => onNavigate('accessibility')} className="hover:text-gold transition-colors">הצהרת נגישות</button>
           </div>
         </div>
       </div>

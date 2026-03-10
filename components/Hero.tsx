@@ -30,7 +30,7 @@ const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
           </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-navy leading-tight mb-6">
             צמד ברזל עושים שינוי <br />
-            <span className="text-gold">בעולם התיווך וליווי המשקיעים</span>
+            <span className="text-gold">בעולם התיווך וליווי המשקיעים</span>
           </h1>
           <p className="text-xl md:text-2xl text-navy/70 leading-relaxed mb-10 max-w-xl">
             אנחנו כאן כדי להעניק לכם שקיפות מלאה, אמינות ללא פשרות וביטחון מוחלט לכל אורך הדרך - מהצעד הראשון ועד לקבלת המפתח.
@@ -41,7 +41,7 @@ const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
               onClick={() => navigateTo('contact-page')}
               className="bg-gold text-navy px-10 py-5 rounded-2xl font-black text-lg flex items-center justify-center gap-3 transition-all hover:scale-[1.02] hover:shadow-2xl hover:shadow-gold/20"
             >
-              לשיחת ייעוץ חינם
+              לקביעת פגישת ייעוץ חינמית
               <Send size={20} />
             </button>
             <button
@@ -57,11 +57,14 @@ const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="relative order-1 lg:order-2"
+          className="relative order-1 lg:order-2 flex items-center justify-center"
         >
-          <div className="relative z-10 rounded-[4rem] overflow-hidden shadow-2xl border-8 md:border-[12px] border-white bg-white/40 backdrop-blur-xl aspect-[1/1] flex items-center justify-center p-8 md:p-12 group max-w-[280px] sm:max-w-[400px] lg:max-w-none mx-auto lg:mx-0">
-            <div className="absolute inset-0 bg-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-            <Logo className="w-full h-full scale-110 drop-shadow-2xl transition-transform duration-700 group-hover:scale-125" />
+          <div className="relative z-10 rounded-[4rem] overflow-hidden shadow-2xl border-8 md:border-[12px] border-white aspect-[4/4.5] max-w-[360px] sm:max-w-[440px] lg:max-w-[480px] mx-auto group">
+            <img
+              src="/assets/hero.png"
+              alt="צמד ברזל - ליווי נדלן"
+              className="w-full h-full object-cover scale-[1.04] transition-transform duration-700 group-hover:scale-[1.09]"
+            />
           </div>
           <motion.div
             animate={{ rotate: 360 }}
