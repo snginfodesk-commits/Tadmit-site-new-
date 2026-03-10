@@ -12,9 +12,9 @@ export const NAV_LINKS: NavLink[] = [
 
 export const STATS: StatItem[] = [
   { value: '5', label: 'שנות פעילות', suffix: '+' },
-  { value: '50', label: 'עסקאות מוצלחות', suffix: '+' },
-  { value: '50', label: 'לקוחות מרוצים', suffix: '+' },
-  { value: '8', label: 'ערים שונות בישראל', suffix: '+' },
+  { value: '100', label: 'עסקאות מוצלחות', suffix: '+' },
+  { value: '75', label: 'לקוחות מרוצים', suffix: '+' },
+  { value: '10', label: 'ערים שונות בישראל', suffix: '+' },
 ];
 
 export const SERVICES: ServiceItem[] = [

@@ -16,20 +16,24 @@ const HEIGHT = 650;
 
 // Custom offsets for labels to prevent overlapping
 const LABEL_OFFSETS: Record<string, { x: number; y: number }> = {
-    haifa: { x: 0, y: -50 },
-    netanya: { x: -110, y: -25 },
-    telaviv: { x: -115, y: 10 },
-    jerusalem: { x: 85, y: -5 },
-    ashdod: { x: -105, y: 50 },
-    beersheva: { x: 0, y: 55 },
+    telaviv:    { x: -120, y: 10 },
+    ramatgan:   { x: 90,   y: -5 },
+    givataim:   { x: 90,   y: 25 },
+    holon:      { x: -120, y: 25 },
+    batayam:    { x: -120, y: -15 },
+    petahtikva: { x: 90,   y: -30 },
+    herzliya:   { x: 90,   y: -50 },
+    beersheva:  { x: 0,    y: 55 },
+    netivot:    { x: -115, y: 10 },
 };
 
 const projection = geoMercator()
-    .center([35.12, 31.55])
-    .scale(8500)
+    .center([34.82, 31.85])
+    .scale(10500)
     .translate([WIDTH / 2, HEIGHT / 2]);
 
 const pathGenerator = geoPath(projection);
+
 
 // Israel accurate shape from world-atlas GeoJSON (ISO 3166-1 numeric = "376")
 const countriesGeo = feature(worldData as any, (worldData as any).objects.countries);
