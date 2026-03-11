@@ -1,12 +1,14 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { LucideIcon } from 'lucide-react';
 
 interface TimelineStep {
   title: string;
   desc: string;
   icon: React.ReactNode;
+  image?: string;
+  imageAspect?: string;
+  imageContain?: boolean;
 }
 
 interface TimelineProps {
@@ -81,15 +83,21 @@ const Timeline: React.FC<TimelineProps> = ({ steps, priceLabel }) => {
               )}
             </div>
 
-            {/* Image Placeholder */}
+            {/* Image */}
             <div className="md:w-1/2 w-full mt-12 md:mt-0 p-4 md:p-0">
-              <div className="relative w-full aspect-video rounded-[3rem] overflow-hidden border-8 border-white shadow-2xl group-hover:shadow-gold/20 transition-all duration-500 bg-navy/5 flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-navy/5 to-gold/10" />
-                <span className="text-navy/50 font-bold text-xl text-center px-6 relative z-10 leading-relaxed">
-                  מקום לתמונה
-                  <br />
-                  <span className="text-sm opacity-70">{step.title}</span>
-                </span>
+              <div className={`relative w-full ${step.imageAspect || 'aspect-video'} rounded-[3rem] overflow-hidden border-8 border-white shadow-2xl group-hover:shadow-gold/20 transition-all duration-500 bg-navy/5 flex items-center justify-center`}>
+                {step.image ? (
+                  <img src={step.image} alt={step.title} className={step.imageContain ? "w-full h-full object-contain" : "w-full h-full object-cover"} />
+                ) : (
+                  <>
+                    <div className="absolute inset-0 bg-gradient-to-br from-navy/5 to-gold/10" />
+                    <span className="text-navy/50 font-bold text-xl text-center px-6 relative z-10 leading-relaxed">
+                      מקום לתמונה
+                      <br />
+                      <span className="text-sm opacity-70">{step.title}</span>
+                    </span>
+                  </>
+                )}
               </div>
             </div>
           </motion.div>

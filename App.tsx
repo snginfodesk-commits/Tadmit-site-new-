@@ -95,15 +95,6 @@ const App: React.FC = () => {
               badge="המסלול האישי"
             />
 
-            <div className="bg-white py-12 border-b border-navy/5 text-center">
-              <button
-                onClick={() => navigateTo('contact-page')}
-                className="bg-gold text-navy px-12 py-5 rounded-2xl font-black text-xl hover:scale-105 transition-transform inline-block shadow-xl shadow-gold/20"
-              >
-                לקביעת פגישת ייעוץ חינמית
-              </button>
-            </div>
-
             <section className="py-24 bg-offwhite">
               <div className="container mx-auto px-6 max-w-6xl text-center">
                 <h2 className="text-4xl md:text-5xl font-black text-navy mb-12">איך זה עובד?</h2>
@@ -113,6 +104,14 @@ const App: React.FC = () => {
                   <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80" className="absolute inset-0 w-full h-full object-cover opacity-30" />
                 </div>
                 <p className="text-navy/60 font-bold text-xl">צפו בסרטון קצר שמסביר את תהליך הליווי שלנו</p>
+                <div className="mt-8">
+                  <button
+                    onClick={() => navigateTo('contact-page')}
+                    className="bg-gold text-navy px-12 py-5 rounded-2xl font-black text-xl hover:scale-105 transition-transform inline-block shadow-xl shadow-gold/20"
+                  >
+                    לייעוץ אובייקטיבי לחץ כאן
+                  </button>
+                </div>
               </div>
             </section>
 
@@ -125,7 +124,7 @@ const App: React.FC = () => {
 
                 <Timeline
                   steps={[
-                    { title: 'אפיון אישי וניסוח תכנית עסקית', desc: 'מנתחים יחד את הצרכים, התקציב והיעדים כדי לבנות תכנית מותאמת אישית לרכישה הכמה.', icon: <Target size={32} /> },
+                    { title: 'אפיון אישי וניסוח תכנית עסקית', desc: 'מנתחים יחד את הצרכים, התקציב והיעדים כדי לבנות תכנית מותאמת אישית לרכישה הכמה.', icon: <Target size={32} />, image: '/assets/personal-service.jpg', imageAspect: 'aspect-[9/16] !w-[56.25%] mx-auto' },
                     { title: 'חקר שוק', desc: 'מבצעים ניתוח אזורים, מחירים והשוואות כדי לזהות את ההזדמנויות המדיניות עבורכם.', icon: <Search size={32} /> },
                     { title: 'הצגת עסקה', desc: 'מציגים רק את הנכסים הרלוונטיים ביותר לצד נתונים ברורים ומודקים מסב מלא.', icon: <Building size={32} /> },
                     { title: 'משא ומתן', desc: 'מנהלים עבורכם מו"מ מקצועי להשגת מחיר ותנאים מיטביים בעסקה.', icon: <Handshake size={32} /> },
@@ -187,7 +186,7 @@ const App: React.FC = () => {
                 <Timeline
                   steps={[
                     { title: 'גיבוש הקבוצה', desc: 'איחוד משקיעים עם הון עצמי דומה ויעדים משותפים.', icon: <Users size={32} /> },
-                    { title: 'איתור פרויקט פרי-סייל', desc: 'מציאת יזם המעוניין למכור כמות יחידות בהנחה.', icon: <Search size={32} /> },
+                    { title: 'איתור פרויקט פרי-סייל', desc: 'מציאת יזם המעוניין למכור כמות יחידות בהנחה.', icon: <Search size={32} />, image: '/assets/presale.jpg' },
                     { title: 'מינוף כוח הקנייה', desc: 'ניהול מו״מ קבוצתי להשגת מחיר חסר תקדים.', icon: <Briefcase size={32} /> },
                     { title: 'ליווי מלא עד קבלת מפתח', desc: 'פיקוח ובקרה לאורך כל חיי הפרויקט.', icon: <Building size={32} /> }
                   ]}
@@ -272,15 +271,15 @@ const App: React.FC = () => {
                     </div>
                   </div>
                   <div className="order-1 lg:order-2 relative">
-                    <div className="aspect-[4/5] md:aspect-square bg-navy rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white p-2">
-                      <div className="w-full h-full bg-navy/10 rounded-[2.5rem] flex flex-col items-center justify-center relative overflow-hidden group">
-                        <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy to-navy/90" />
-                        <Logo className="w-40 h-40 relative z-10 group-hover:scale-110 transition-transform duration-700" />
-                        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-gold/20 to-transparent pointer-events-none" />
+                    <div className="relative h-[580px] md:h-[680px]">
+                      <div className="absolute top-0 right-0 w-[432px] md:w-[504px] aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white rotate-[-6deg] hover:rotate-0 transition-transform duration-500">
+                        <img src="/assets/about1.png" alt="צמד ברזל" className="w-full h-full object-cover" />
                       </div>
+                      <div className="absolute bottom-0 left-0 w-[432px] md:w-[504px] aspect-[5/3] rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white rotate-[5deg] hover:rotate-0 transition-transform duration-500">
+                        <img src="/assets/about2.png" alt="צמד ברזל" className="w-full h-full object-cover" />
+                      </div>
+                      <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-gold/20 rounded-full blur-3xl -z-10 pointer-events-none" />
                     </div>
-                    {/* Decorative Elements */}
-                    <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-gold/20 rounded-full blur-3xl -z-10 pointer-events-none" />
                   </div>
                 </div>
               </div>

@@ -33,7 +33,7 @@ const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
             <span className="text-gold">בעולם התיווך וליווי המשקיעים</span>
           </h1>
           <p className="text-xl md:text-2xl text-navy/70 leading-relaxed mb-10 max-w-xl">
-            אנחנו כאן כדי להעניק לכם שקיפות מלאה, אמינות ללא פשרות וביטחון מוחלט לכל אורך הדרך - מהצעד הראשון ועד לקבלת המפתח.
+            נציגי קונים בלעדיים — בעולם של אינטרסים מתחת לשולחן, אנחנו כאן כדי להיות ב-100% נאמנות מוחלטת לאינטרס שלך.
           </p>
 
           <div className="flex flex-col sm:flex-row-reverse gap-4">
