@@ -175,98 +175,125 @@ const IsraeliMap: React.FC = () => {
             viewport={{ once: true }} transition={{ duration: 0.9, delay: 0.15 }}
             className={`flex flex-col gap-4 ${isMobile ? 'col-span-full' : ''}`}>
 
-            {/* City grid — cards expand in-place on hover */}
-            <div
-              onMouseLeave={() => setActive(null)}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-start">
-              {CITIES.map((city, i) => {
-                const isActive = active === city.id;
-                return (
+            {/* Mobile: clean list / Desktop: cards */}
+            {isMobile ? (
+              <div className="flex flex-col">
+                {CITIES.map((city, i) => (
                   <motion.div
                     key={city.id}
-                    initial={{ opacity: 0, x: 20 }}
+                    initial={{ opacity: 0, x: 16 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: 0.3 + i * 0.07 }}
-                    onMouseEnter={() => setActive(city.id)}
-                    onClick={() => setActive(active === city.id ? null : city.id)}
-                    className="flex flex-col rounded-[1.4rem] cursor-pointer relative overflow-hidden"
-                    style={{
-                      background: isActive
-                        ? `linear-gradient(135deg, ${city.color}25, rgba(13,27,42,0.98))`
-                        : 'rgba(255,255,255,0.03)',
-                      border: isActive ? `2px solid ${city.color}50` : '1px solid rgba(255,255,255,0.06)',
-                      boxShadow: isActive ? `0 8px 24px ${city.color}20` : 'none',
-                      backdropFilter: 'blur(8px)',
-                      alignSelf: 'stretch',
-                      willChange: 'transform',
-                      transition: 'background 0.2s ease, border 0.2s ease, box-shadow 0.2s ease'
-                    }}>
-
-                    {/* Always visible: dot + name + desc */}
-                    <div className="flex items-center gap-3 px-4 py-3">
-                      <div className="relative flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center"
-                        style={{
-                          background: isActive ? `${city.color}20` : 'rgba(255,255,255,0.05)',
-                          border: `1.5px solid ${isActive ? city.color : 'rgba(255,255,255,0.08)'}`
-                        }}>
-                        <div className="w-3 h-3 rounded-full transition-all duration-300"
-                          style={{ background: isActive ? city.color : 'rgba(255,255,255,0.2)' }} />
-                        {isActive && (
-                          <motion.div
-                            animate={{ scale: [1, 2.2], opacity: [0.6, 0] }}
-                            transition={{ repeat: Infinity, duration: 1 }}
-                            className="absolute inset-0 rounded-full"
-                            style={{ background: `${city.color}30` }}
-                          />
-                        )}
-                      </div>
-                      <div className="text-right flex-1 min-w-0">
-                        <p className="font-black text-xl leading-tight transition-colors duration-250"
-                          style={{ color: isActive ? city.color : 'rgba(255,255,255,0.9)' }}>
-                          {city.name}
-                        </p>
-                        <p className="text-sm mt-1 truncate transition-colors duration-250"
-                          style={{ color: isActive ? 'rgba(255,255,255,0.55)' : 'rgba(255,255,255,0.28)' }}>
-                          {city.desc}
-                        </p>
-                      </div>
+                    transition={{ delay: 0.08 + i * 0.05 }}
+                    className="flex items-center gap-4 py-3.5 px-1"
+                    style={{ borderBottom: i < CITIES.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none' }}
+                  >
+                    <div className="w-1 self-stretch rounded-full flex-shrink-0 min-h-[44px]"
+                      style={{ background: city.color }} />
+                    <div className="flex-1 text-right min-w-0">
+                      <p className="font-black text-lg text-white/90 leading-tight">{city.name}</p>
+                      <p className="text-sm text-white/40 mt-0.5 truncate">{city.desc}</p>
                     </div>
-
+                    <div className="text-xs font-bold px-2.5 py-1 rounded-full flex-shrink-0"
+                      style={{ background: `${city.color}20`, color: city.color }}>
+                      +{city.trendPercent}%
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            ) : (
+              <div
+                onMouseLeave={() => setActive(null)}
+                className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-start">
+                {CITIES.map((city, i) => {
+                  const isActive = active === city.id;
+                  return (
                     <motion.div
-                      initial={false}
-                      animate={{
-                        height: isActive ? 'auto' : 0,
-                        opacity: isActive ? 1 : 0,
-                        marginTop: isActive ? 12 : 0
-                      }}
-                      transition={{ duration: 0.2, ease: 'easeOut' }}
-                      className="hidden lg:block overflow-hidden"
-                    >
-                      <div className="px-4 pb-4 pt-3 text-right" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-                        <div className="flex flex-wrap gap-1.5 justify-end mb-2">
-                          <span className="text-xs font-bold px-2.5 py-1 rounded-full"
-                            style={{ background: `${city.color}22`, color: city.color, border: `1px solid ${city.color}30` }}>
-                            {city.deals} עסקאות מוצלחות
-                          </span>
-                          <span className="flex items-center gap-1 text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/20">
-                            <TrendingUp size={11} />
-                            +{city.trendPercent}% עליית ערך
-                          </span>
+                      key={city.id}
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.3 + i * 0.07 }}
+                      onMouseEnter={() => setActive(city.id)}
+                      onClick={() => setActive(active === city.id ? null : city.id)}
+                      className="flex flex-col rounded-[1.4rem] cursor-pointer relative overflow-hidden"
+                      style={{
+                        background: isActive
+                          ? `linear-gradient(135deg, ${city.color}25, rgba(13,27,42,0.98))`
+                          : 'rgba(255,255,255,0.03)',
+                        border: isActive ? `2px solid ${city.color}50` : '1px solid rgba(255,255,255,0.06)',
+                        boxShadow: isActive ? `0 8px 24px ${city.color}20` : 'none',
+                        backdropFilter: 'blur(8px)',
+                        alignSelf: 'stretch',
+                        willChange: 'transform',
+                        transition: 'background 0.2s ease, border 0.2s ease, box-shadow 0.2s ease'
+                      }}>
+
+                      {/* Always visible: dot + name + desc */}
+                      <div className="flex items-center gap-3 px-4 py-3">
+                        <div className="relative flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center"
+                          style={{
+                            background: isActive ? `${city.color}20` : 'rgba(255,255,255,0.05)',
+                            border: `1.5px solid ${isActive ? city.color : 'rgba(255,255,255,0.08)'}`
+                          }}>
+                          <div className="w-3 h-3 rounded-full transition-all duration-300"
+                            style={{ background: isActive ? city.color : 'rgba(255,255,255,0.2)' }} />
+                          {isActive && (
+                            <motion.div
+                              animate={{ scale: [1, 2.2], opacity: [0.6, 0] }}
+                              transition={{ repeat: Infinity, duration: 1 }}
+                              className="absolute inset-0 rounded-full"
+                              style={{ background: `${city.color}30` }}
+                            />
+                          )}
                         </div>
-                        <div className="flex flex-wrap gap-1 justify-end">
-                          {city.highlights.map((h, idx) => (
-                            <span key={idx} className="text-xs font-bold px-2 py-1 rounded-full bg-white/5 text-white/65 border border-white/10">
-                              {h}
-                            </span>
-                          ))}
+                        <div className="text-right flex-1 min-w-0">
+                          <p className="font-black text-xl leading-tight transition-colors duration-250"
+                            style={{ color: isActive ? city.color : 'rgba(255,255,255,0.9)' }}>
+                            {city.name}
+                          </p>
+                          <p className="text-sm mt-1 truncate transition-colors duration-250"
+                            style={{ color: isActive ? 'rgba(255,255,255,0.55)' : 'rgba(255,255,255,0.28)' }}>
+                            {city.desc}
+                          </p>
                         </div>
                       </div>
+
+                      <motion.div
+                        initial={false}
+                        animate={{
+                          height: isActive ? 'auto' : 0,
+                          opacity: isActive ? 1 : 0,
+                          marginTop: isActive ? 12 : 0
+                        }}
+                        transition={{ duration: 0.2, ease: 'easeOut' }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-4 pb-4 pt-3 text-right" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+                          <div className="flex flex-wrap gap-1.5 justify-end mb-2">
+                            <span className="text-xs font-bold px-2.5 py-1 rounded-full"
+                              style={{ background: `${city.color}22`, color: city.color, border: `1px solid ${city.color}30` }}>
+                              {city.deals} עסקאות מוצלחות
+                            </span>
+                            <span className="flex items-center gap-1 text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/20">
+                              <TrendingUp size={11} />
+                              +{city.trendPercent}% עליית ערך
+                            </span>
+                          </div>
+                          <div className="flex flex-wrap gap-1 justify-end">
+                            {city.highlights.map((h, idx) => (
+                              <span key={idx} className="text-xs font-bold px-2 py-1 rounded-full bg-white/5 text-white/65 border border-white/10">
+                                {h}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </motion.div>
                     </motion.div>
-                  </motion.div>
-                );
-              })}
-            </div>
+                  );
+                })}
+              </div>
+            )}
 
             <p className="text-white/40 font-medium text-base text-right mt-3 leading-relaxed">
               כל נקודה מייצגת עסקה מוצלחת וחקר שוק מעמיק. אנחנו בוחרים את המיקומים בפינצטה לפי פוטנציאל עליית ערך ותשואה.

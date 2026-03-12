@@ -71,7 +71,6 @@ const MilitaryLectures: React.FC = () => {
       </div>
 
       <style>{`
-        @media (max-width: 768px) { .marquee-inner { animation: none !important; } }
         @keyframes marquee-scroll {
           from { transform: translateX(0); }
           to { transform: translateX(-50%); }
