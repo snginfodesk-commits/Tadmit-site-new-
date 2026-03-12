@@ -17,11 +17,11 @@ const MissionVision: React.FC = () => {
             <div className="w-20 h-20 bg-gold/10 text-gold rounded-full flex items-center justify-center mb-8">
               <ShieldCheck size={48} />
             </div>
-            <h2 className="text-4xl md:text-5xl font-black text-navy mb-8 leading-tight">החזון והמשימה שלנו</h2>
+            <h2 className="text-4xl md:text-5xl font-black text-navy mb-8 leading-tight">המשימה</h2>
             <div className="w-24 h-2 bg-gold mb-12 rounded-full" />
             
             <p className="text-2xl md:text-4xl font-black text-navy leading-relaxed italic px-4">
-              "החזון שלנו הוא לשנות את מאזן הכוחות בעולם הנדל"ן הישראלי, ולהפוך את נאמנות השירות לערך עליון. אנחנו שואפים לעולם שבו כל משקיע זוכה לייצוג אובייקטיבי ונקי, ללא ניגוד עניינים, כך שהאינטרס שלו יהיה הדבר היחיד שקובע את תוצאות העסקה."
+              "להנגיש את התחום בשקיפות מלאה, בטחון ובסטנדרטים גבוהים של אמינות לכל מי שמעוניין לבנות עתיד כלכלי יציב."
             </p>
           </motion.div>
 
@@ -32,9 +32,9 @@ const MissionVision: React.FC = () => {
               viewport={{ once: true }}
               className="bg-offwhite p-10 rounded-[2.5rem] border border-navy/5 shadow-sm"
             >
-              <h3 className="text-2xl font-black text-gold mb-4">המשימה</h3>
+              <h3 className="text-2xl font-black text-gold mb-4">החזון והמשימה שלנו</h3>
               <p className="text-lg text-navy/70 leading-relaxed font-medium">
-                להנגיש את התחום בשקיפות מלאה, בטחון ובסטנדרטים גבוהים של אמינות לכל מי שמעוניין לבנות עתיד כלכלי יציב.
+                החזון שלנו הוא לשנות את <strong className="text-gold font-semibold">מאזן הכוחות</strong> בעולם הנדל"ן הישראלי, ולהפוך את <strong className="text-gold font-semibold">נאמנות השירות</strong> לערך עליון. אנחנו שואפים לעולם שבו כל משקיע זוכה ל<strong className="text-gold font-semibold">ייצוג אוביקטיבי ונקי</strong>, <strong className="text-gold font-semibold">ללא ניגוד עניינים</strong>, כך שהאינטרס שלו יהיה <strong className="text-gold font-semibold">הדבר היחיד</strong> שקובע את תוצאות העסקה.
               </p>
             </motion.div>
             <motion.div 
@@ -45,7 +45,7 @@ const MissionVision: React.FC = () => {
             >
               <h3 className="text-2xl font-black text-gold mb-4">השקט שלכם</h3>
               <p className="text-lg text-white/70 leading-relaxed font-medium">
-                אתם יכולים להיות בראש שקט כשיש מישהו שדואג לאינטרסים שלכם ב-100% ומחפש את העסקאות שהכי מתאימות לכם — ולא מתנגשות עם אינטרסים של מוכרים, יזמים או עמלות תיווך חבויות.
+                אתם יכולים להיות <strong className="text-gold font-semibold">בראש שקט</strong> כשיש מישהו שדואג לאינטרסים שלכם <strong className="text-gold font-semibold">ב-100%</strong> ומחפש את העסקאות שהכי מתאימות לכם — ולא מתנגשות עם אינטרסים של מוכרים, יזמים או <strong className="text-gold font-semibold">עמלות תיווך חבויות</strong>.
               </p>
             </motion.div>
           </div>

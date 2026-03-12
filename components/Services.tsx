@@ -96,7 +96,7 @@ const Services: React.FC<ServicesProps> = ({ navigateTo }) => {
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1 + i * 0.1 }}
-                    className={`items-center justify-start gap-5 border-b border-navy/5 lg:group-hover:border-white/10 pb-4 transition-colors duration-500 ${i > 2 ? 'hidden md:flex' : 'flex'}`}
+                    className={`items-center justify-start gap-5 border-b border-navy/5 lg:group-hover:border-white/10 pb-4 transition-colors duration-500 ${'flex'}`}
                   >
                     <div className="w-6 h-6 rounded-full bg-gold/10 lg:group-hover:bg-gold/20 flex items-center justify-center transition-colors shrink-0">
                       <CheckCircle2 className="text-gold" size={16} />

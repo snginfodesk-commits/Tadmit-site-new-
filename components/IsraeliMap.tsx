@@ -189,6 +189,7 @@ const IsraeliMap: React.FC = () => {
                     viewport={{ once: true }}
                     transition={{ delay: 0.3 + i * 0.07 }}
                     onMouseEnter={() => setActive(city.id)}
+                    onClick={() => setActive(active === city.id ? null : city.id)}
                     className="flex flex-col rounded-[1.4rem] cursor-pointer relative overflow-hidden"
                     style={{
                       background: isActive
@@ -229,27 +230,6 @@ const IsraeliMap: React.FC = () => {
                           style={{ color: isActive ? 'rgba(255,255,255,0.55)' : 'rgba(255,255,255,0.28)' }}>
                           {city.desc}
                         </p>
-                      </div>
-                    </div>
-
-                    {/* Expanded section — now uses direct motion height control for stability */}
-                    <div className="lg:hidden mx-4 mb-3 pt-3 text-right" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-                      <div className="flex flex-wrap gap-1.5 justify-end mb-2">
-                        <span className="text-xs font-bold px-2.5 py-1 rounded-full"
-                          style={{ background: `${city.color}22`, color: city.color, border: `1px solid ${city.color}30` }}>
-                          {city.deals} עסקאות מוצלחות
-                        </span>
-                        <span className="flex items-center gap-1 text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/20">
-                          <TrendingUp size={11} />
-                          +{city.trendPercent}% עליית ערך
-                        </span>
-                      </div>
-                      <div className="flex flex-wrap gap-1 justify-end">
-                        {city.highlights.map((h, idx) => (
-                          <span key={idx} className="text-xs font-bold px-2 py-1 rounded-full bg-white/5 text-white/65 border border-white/10">
-                            {h}
-                          </span>
-                        ))}
                       </div>
                     </div>
 

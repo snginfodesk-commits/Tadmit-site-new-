@@ -50,9 +50,9 @@ const MilitaryLectures: React.FC = () => {
       </div>
 
       {/* Marquee Units - CSS animation for cross-platform support */}
-      <div className="overflow-hidden w-full mt-10" dir="ltr">
+      <div className="overflow-x-auto md:overflow-hidden w-full mt-10" dir="ltr" style={{ WebkitOverflowScrolling: "touch", scrollbarWidth: "none" }}>
         <div
-          className="flex items-center gap-8 md:gap-20 py-4"
+          className="marquee-inner flex items-center gap-8 md:gap-20 py-4"
           style={{
             width: 'max-content',
             animation: 'marquee-scroll 35s linear infinite',
@@ -71,6 +71,7 @@ const MilitaryLectures: React.FC = () => {
       </div>
 
       <style>{`
+        @media (max-width: 768px) { .marquee-inner { animation: none !important; } }
         @keyframes marquee-scroll {
           from { transform: translateX(0); }
           to { transform: translateX(-50%); }

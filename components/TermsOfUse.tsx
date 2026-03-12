@@ -38,7 +38,7 @@ const TermsOfUse: React.FC<Props> = ({ onNavigate }) => (
         <p>תנאים אלה כפופים לדיני מדינת ישראל. כל סכסוך יידון בבתי המשפט במחוז תל אביב-יפו.</p>
       </Section>
       <Section title="יצירת קשר">
-        <p><a href="mailto:SNGinfodesk@gmail.com" className="text-gold font-bold hover:underline">SNGinfodesk@gmail.com</a> | <a href="tel:+972548654555" className="text-gold font-bold hover:underline">054-8654555</a></p>
+        <p><a href="mailto:SNGinfodesk@gmail.com" className="text-gold font-bold hover:underline">SNGinfodesk@gmail.com</a></p>
       </Section>
       <div className="mt-16 text-center">
         <button onClick={() => onNavigate('home')} className="bg-navy text-white px-10 py-4 rounded-2xl font-black text-lg hover:bg-navy/80 transition-colors">חזרה לדף הבית</button>

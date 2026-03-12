@@ -38,8 +38,7 @@ const AccessibilityStatement: React.FC<Props> = ({ onNavigate }) => (
       <Section title="פנייה בנושא נגישות">
         <p>נתקלת בבעיית נגישות? נשמח לעזור ונגיב תוך 5 ימי עסקים:</p>
         <div className="bg-white rounded-2xl p-6 border border-navy/10 space-y-2">
-          <p><strong>דוא&quot;ל:</strong> <a href="mailto:SNGinfodesk@gmail.com" className="text-gold font-bold hover:underline">SNGinfodesk@gmail.com</a></p>
-          <p><strong>טלפון:</strong> <a href="tel:+972548654555" className="text-gold font-bold hover:underline">054-8654555</a></p>
+          <p><strong>דוא&quot;ל:</strong> <a href="mailto:SNGinfodesk@gmail.com" className="text-gold font-bold hover:underline">SNGinfodesk@gmail.com</a></p>
         </div>
       </Section>
       <Section title="בסיס חוקי">
