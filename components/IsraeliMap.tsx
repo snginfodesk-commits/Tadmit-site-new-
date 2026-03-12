@@ -194,10 +194,6 @@ const IsraeliMap: React.FC = () => {
                       <p className="font-black text-lg text-white/90 leading-tight">{city.name}</p>
                       <p className="text-sm text-white/40 mt-0.5 truncate">{city.desc}</p>
                     </div>
-                    <div className="text-xs font-bold px-2.5 py-1 rounded-full flex-shrink-0"
-                      style={{ background: `${city.color}20`, color: city.color }}>
-                      +{city.trendPercent}%
-                    </div>
                   </motion.div>
                 ))}
               </div>

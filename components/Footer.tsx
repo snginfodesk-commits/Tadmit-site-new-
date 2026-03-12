@@ -14,7 +14,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 mb-12 md:mb-20 text-right">
           {/* Column 1: Brand */}
-          <div className="space-y-6">
+          <div className="space-y-6 order-last md:order-first">
             <div className="flex items-center justify-end">
               <Logo className="w-24 h-24" />
             </div>
