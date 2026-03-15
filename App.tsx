@@ -55,34 +55,34 @@ const App: React.FC = () => {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  const SuccessStories = ({ category }: { category: string }) => (
-    <div className="grid md:grid-cols-2 gap-12 mt-16">
-      {[1, 2].map((i) => (
-        <motion.div
-          key={i}
-          whileHover={{ y: -10 }}
-          className="bg-white p-8 rounded-[3rem] shadow-xl border border-navy/5 overflow-hidden group text-right"
-        >
-          <div className="aspect-video bg-navy/10 rounded-[2rem] mb-8 relative overflow-hidden flex items-center justify-center">
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-10">
-              <div className="w-full h-px bg-navy rotate-45" />
-              <div className="w-full h-px bg-navy -rotate-45" />
-            </div>
-            <div className="text-gold/20">
-              <Users size={80} />
-            </div>
-          </div>
-          <p className="text-xl text-navy leading-relaxed font-black mb-6">
-            "[ציטוט מלקוח שעבר {category} — כאן יופיע סיפור הצלחה אמיתי של משקיע שקיבל שקט נפשי]"
-          </p>
-          <div className="flex flex-col items-end">
-            <h4 className="text-2xl font-black text-navy">ישראל ישראלי</h4>
-            <p className="text-gold font-bold text-sm tracking-widest uppercase">{category}, תל אביב</p>
-          </div>
-        </motion.div>
-      ))}
-    </div>
-  );
+  const SuccessStories = ({ category: _category }: { category: string }) => {
+    const items = [
+      { src: '/assets/לקוחות מרוצים 1.webp', rotate: '-2deg' },
+      { src: '/assets/לקוחות מרוצים 2.webp', rotate:  '1.5deg' },
+      { src: '/assets/לקוחות מרוצים 3.webp', rotate:  '2deg' },
+      { src: '/assets/לקוחות מרוצים 4.jpeg', rotate: '-1.5deg' },
+    ];
+    return (
+      <div className="mt-16 grid grid-cols-2 gap-6 max-w-[75%] mx-auto">
+        {items.map((item, i) => (
+          <motion.div
+            key={i}
+            whileHover={{ rotate: 0, scale: 1.03, zIndex: 10 }}
+            transition={{ duration: 0.3 }}
+            style={{ rotate: item.rotate }}
+            className="relative rounded-2xl overflow-hidden border-4 border-white shadow-2xl shadow-navy/15 aspect-[4/3] cursor-pointer"
+          >
+            <img
+              src={item.src}
+              alt={`לקוח מרוצה ${i + 1}`}
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+        ))}
+      </div>
+    );
+  };
 
   const renderPage = () => {
     switch (currentPage) {
@@ -91,7 +91,7 @@ const App: React.FC = () => {
           <motion.div key="personal" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
             <SubPageHero
               title="ליווי אישי"
-              subtitle="תוכנית מותאמת בדיוק למידות הלקוח וליווי מא׳ ועד ת׳ בקניית הדירה. אנחנו לא רק מוצאים דירה — אנחנו בונים איתך את הדרך אליה."
+              subtitle="ליווי מקצועי מבוסס נתונים, מותאם אישית לצרכים ולתקציב שלך. אנחנו לא רק מוצאים נכס — אנחנו מוודאים שתרכוש נכון, במחיר נכון, עם מינימום סיכון."
               badge="המסלול האישי"
             />
 
@@ -124,11 +124,11 @@ const App: React.FC = () => {
 
                 <Timeline
                   steps={[
-                    { title: 'אפיון אישי וניסוח תכנית עסקית', desc: 'מנתחים יחד את הצרכים, התקציב והיעדים כדי לבנות תכנית מותאמת אישית לרכישה הכמה.', icon: <Target size={32} />, image: '/assets/personal-service.webp', imageAspect: 'aspect-[9/16] !w-[56.25%] mx-auto' },
-                    { title: 'חקר שוק', desc: 'מבצעים ניתוח אזורים, מחירים והשוואות כדי לזהות את ההזדמנויות המדיניות עבורכם.', icon: <Search size={32} />, image: '/assets/market-research.webp', imageAspect: 'aspect-[9/16] !w-[56.25%] mx-auto' },
-                    { title: 'הצגת עסקה', desc: 'מציגים רק את הנכסים הרלוונטיים ביותר לצד נתונים ברורים ומודקים מסב מלא.', icon: <Building size={32} />, image: '/assets/deal-presentation.webp', imageAspect: 'aspect-[11/16] !w-[68%] mx-auto' },
+                    { title: 'אפיון אישי וניסוח תכנית עסקית', desc: 'מנתחים יחד את הצרכים, התקציב והיעדים כדי לבנות תכנית מותאמת אישית לרכישה חכמה.', icon: <Target size={32} />, image: '/assets/personal-service.webp', imageAspect: 'aspect-[9/16] !w-[56.25%] mx-auto' },
+                    { title: 'חקר שוק', desc: 'מבצעים ניתוח אזורים, מחירים והשוואות כדי לזהות את ההזדמנויות המושלמות עבורכם.', icon: <Search size={32} />, image: '/assets/market-research.webp', imageAspect: 'aspect-[9/16] !w-[56.25%] mx-auto' },
+                    { title: 'הצגת עסקה', desc: 'מציגים רק את הנכסים הרלוונטיים, עם נתונים ברורים ומדויקים ותמונה מלאה.', icon: <Building size={32} />, image: '/assets/deal-presentation.webp', imageAspect: 'aspect-[11/16] !w-[68%] mx-auto' },
                     { title: 'משא ומתן', desc: 'מנהלים עבורכם מו"מ מקצועי להשגת מחיר ותנאים מיטביים בעסקה.', icon: <Handshake size={32} />, image: '/assets/negotiation.webp' },
-                    { title: 'מעורבות אנשי מקצוע ובדיקות חיוניות', desc: 'מכניסים לעבודה שמאי, מהנדס, שמאי ומבדק, כדי לוודא שארכש תקין וללא הפתעות.', icon: <ShieldCheck size={32} /> },
+                    { title: 'מעורבות אנשי מקצוע ובדיקות חיוניות', desc: 'מכניסים לעבודה את כל אנשי המקצוע הרלוונטים בשביל לוודא שהנכס תקין בצורה מלאה.', icon: <ShieldCheck size={32} />, image: '/assets/אנשי מקצוע.webp', imageAspect: 'aspect-[7/10] !w-[70%] mx-auto' },
                     { title: 'הסכם מכר ורכישת הדירה', desc: 'מלווים אתכם בהסדרת ההיבטים המשפטיים והפיננסיים עד חתימה על הסכם המכר.', icon: <Key size={32} />, image: '/assets/purchase-agreement.webp', imageAspect: 'aspect-[11/16] !w-[68%] mx-auto' }
                   ]}
                 />
@@ -140,12 +140,12 @@ const App: React.FC = () => {
                 <h2 className="text-4xl font-black text-navy mb-16 text-center">מה עוד מקבלים בליווי?</h2>
                 <div className="grid md:grid-cols-3 gap-8">
                   {[
-                    { icon: <FileText size={32} />, title: 'דוחות שוטפות על הנכסים', desc: 'מידע מלא ומפורט על כל נכס שנבדק.' },
-                    { icon: <Target size={32} />, title: 'ניתוח רווחיות', desc: 'חישוב מדויק של פוטנציאל הרווח.' },
-                    { icon: <Briefcase size={32} />, title: 'התאמת משכנתא', desc: 'ייעוץ וליווי מול הבנקים לתנאים הכי טובים.' },
-                    { icon: <CheckCircle size={32} />, title: 'ליווי בירוקרטיה', desc: 'אנחנו מטפלים בכל הטפסים בשבילכם.' },
-                    { icon: <History size={32} />, title: 'זמינות 24/7', desc: 'אנחנו כאן לכל שאלה לאורך כל הדרך.' },
-                    { icon: <Shield size={32} />, title: 'גישה למאגר נכסים בלעדי', desc: 'נכסים לפני שהם מגיעים לשוק החופשי.' }
+                    { icon: <Search size={32} />, title: 'ניתוח שוק מעמיק', desc: 'בחינת מגמות, מחירי עסקאות ופוטנציאל עליית ערך לפי אזור.' },
+                    { icon: <Target size={32} />, title: 'חיפוש אקטיבי בשטח', desc: 'לא מחכים שנכסים יגיעו — יוצאים לאתר הזדמנויות לפני כולם.' },
+                    { icon: <Handshake size={32} />, title: 'מו"מ מקצועי בשמך', desc: 'ניהול משא ומתן מול מוכרים ויזמים להשגת המחיר ותנאים הטובים ביותר.' },
+                    { icon: <Briefcase size={32} />, title: 'ליווי פיננסי ומשפטי', desc: 'תיאום וליווי מול עו"ד, יועץ משכנתא ושמאי — הכל תחת קורת גג אחת.' },
+                    { icon: <Shield size={32} />, title: 'שקיפות מלאה', desc: 'כל נכס שנבדק מגיע עם דו"ח: מה מצאנו, למה כן/לא, ומה ההמלצה.' },
+                    { icon: <Gem size={32} />, title: 'מיקוד ברווח מיום הקנייה', desc: 'מחפשים עסקאות עם פוטנציאל רווח כבר ביום הרכישה — לא "קנייה ממוצעת".' }
                   ].map((item, idx) => (
                     <div key={idx} className="p-10 bg-white rounded-[2.5rem] shadow-sm border border-navy/5 hover:shadow-xl transition-all duration-300 text-right">
                       <div className="text-gold mb-6">{item.icon}</div>
