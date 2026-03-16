@@ -4,7 +4,7 @@ import { NavLink, StatItem, Testimonial, ServiceItem } from './types';
 export const NAV_LINKS: NavLink[] = [
   { label: 'בית', href: '#home' },
   { label: 'ליווי אישי', href: '#personal' },
-  { label: 'קבוצת רכישה', href: '#group' },
+  { label: 'קבוצת רוכשים', href: '#group' },
   { label: 'ערך מוסף', href: '#value' },
   { label: 'אודות', href: '#about' },
   { label: 'צור קשר', href: '#contact-page' },
@@ -73,7 +73,7 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: 2,
     name: 'דניאל כ.',
-    role: 'קבוצת רכישה',
+    role: 'קבוצת רוכשים',
     quote: 'הצלחנו לקנות דירה במחיר פרי-סייל מדהים בזכות הכוח של הקבוצה. תודה על הליווי הצמוד!',
     videoThumb: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop',
     number: '02'

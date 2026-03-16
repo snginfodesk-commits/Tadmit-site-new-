@@ -176,13 +176,13 @@ const App: React.FC = () => {
         return (
           <motion.div key="group" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
             <SubPageHero
-              title="קבוצות רכישה בלעדיות"
+              title="קבוצות רוכשים בלעדיות"
               subtitle="הכוח שלכם נמצא ביחד. קונים בהנחות משמעותיות ממחירי השוק."
               badge="כוח הקבוצה"
             />
             <section className="py-24 bg-white">
               <div className="container mx-auto px-6 max-w-6xl text-right">
-                <h2 className="text-4xl md:text-5xl font-black text-navy text-center mb-16">תהליך קבוצת הרכישה</h2>
+                <h2 className="text-4xl md:text-5xl font-black text-navy text-center mb-16">תהליך קבוצת הרוכשים</h2>
                 <Timeline
                   steps={[
                     { title: 'גיבוש הקבוצה', desc: 'איחוד משקיעים עם הון עצמי דומה ויעדים משותפים.', icon: <Users size={32} /> },

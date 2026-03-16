@@ -112,7 +112,7 @@ const ContactForm: React.FC = () => {
                   style={{ backgroundColor: '#1B3A5C' }}
                 >
                   <option value="ליווי אישי" style={{ backgroundColor: '#1B3A5C', color: 'white' }}>ליווי אישי לקניית דירה</option>
-                  <option value="קבוצת רכישה" style={{ backgroundColor: '#1B3A5C', color: 'white' }}>הצטרפות לקבוצת רכישה</option>
+                  <option value="קבוצת רוכשים" style={{ backgroundColor: '#1B3A5C', color: 'white' }}>הצטרפות לקבוצת רוכשים</option>
                   <option value="שיתוף פעולה" style={{ backgroundColor: '#1B3A5C', color: 'white' }}>שיתוף פעולה עסקי</option>
                 </select>
                 <div className="absolute left-6 top-1/2 -translate-y-1/2 pointer-events-none text-white/30">
