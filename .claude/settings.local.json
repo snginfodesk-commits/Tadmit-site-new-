@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(curl -s \"https://raw.githubusercontent.com/DavidHDev/react-bits/main/src/ts-tailwind/TextAnimations/ScrollFloat/ScrollFloat.tsx\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/DavidHDev/react-bits/main/src/ts-tailwind/Components/StarBorder/StarBorder.tsx\")",
+      "Bash(curl -L \"https://raw.githubusercontent.com/DavidHDev/react-bits/main/src/ts-tailwind/Components/StarBorder/StarBorder.tsx\")",
+      "Bash(curl -s \"https://api.github.com/repos/DavidHDev/react-bits/contents/src/ts-tailwind/Components\")",
+      "Bash(curl -s \"https://api.github.com/repos/DavidHDev/react-bits/contents/src/ts-tailwind/Backgrounds\")",
+      "Bash(curl -s \"https://api.github.com/repos/DavidHDev/react-bits/contents/src/ts-tailwind/Backgrounds/Aurora?ref=main\")",
+      "Bash(timeout 10 curl -s \"https://raw.githubusercontent.com/DavidHDev/react-bits/main/src/ts-tailwind/Backgrounds/Aurora/Aurora.tsx\")",
+      "Bash(curl -s \"https://api.github.com/repos/DavidHDev/react-bits/contents/src/ts-tailwind\")",
+      "Bash(curl -s \"https://api.github.com/repos/DavidHDev/react-bits/contents/src/ts-tailwind/Animations\")",
+      "Bash(curl -s \"https://api.github.com/repos/DavidHDev/react-bits/contents/src/ts-tailwind/Animations/StarBorder?ref=main\")",
+      "Bash(timeout 10 curl -s \"https://raw.githubusercontent.com/DavidHDev/react-bits/main/src/ts-tailwind/Animations/StarBorder/StarBorder.tsx\")",
+      "Bash(npm install gsap ogl --save)",
+      "Bash(curl -s https://raw.githubusercontent.com/DavidHDev/react-bits/main/src/components/CircularGallery/CircularGallery.tsx)",
+      "Bash(curl -s https://raw.githubusercontent.com/DavidHDev/react-bits/main/src/components/CircularGallery/CircularGallery.jsx)",
+      "Bash(curl -s \"https://api.github.com/search/code?q=CircularGallery+repo:DavidHDev/react-bits\")",
+      "Bash(curl -s https://api.github.com/repos/DavidHDev/react-bits/git/trees/main?recursive=1)",
+      "Bash(curl -s https://raw.githubusercontent.com/DavidHDev/react-bits/main/src/ts-default/Components/CircularGallery/CircularGallery.tsx)",
+      "Bash(curl --connect-timeout 10 https://raw.githubusercontent.com/DavidHDev/react-bits/main/src/ts-default/Components/CircularGallery/CircularGallery.tsx)",
+      "Bash(npx vite build)",
+      "Bash(python -c \":*)",
+      "Read(//c/Users/netan/OneDrive/Desktop/פרויקטים קלוד קוד/אתר תדמית יותר יותר מעודכן/Tadmit-site-new-/**)",
+      "Read(//c/Users/netan/OneDrive/Desktop/פרויקטים קלוד קוד/אתר תדמית יותר יותר מעודכן/Tadmit-site-new-/{total+=$5} END {printf \"\"\"\"Total assets: %.1f MB/n\"\"\"\", total/**)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); [print\\(f''{k}: {v}''\\) for k,v in {**d.get\\(''dependencies'',{}\\), **d.get\\(''devDependencies'',{}\\)}.items\\(\\)]\")",
+      "Bash(npm uninstall @google/genai gsap)"
+    ]
+  }
+}
