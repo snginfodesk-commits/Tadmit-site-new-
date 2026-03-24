@@ -12,6 +12,7 @@ import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import AccessibilityWidget from './components/AccessibilityWidget';
+import CookieConsent from './components/CookieConsent';
 import IsraeliMap from './components/IsraeliMap';
 import Timeline from './components/Timeline';
 import SubPageHero from './components/SubPageHero';
@@ -468,6 +469,7 @@ const App: React.FC = () => {
       <Footer onNavigate={navigateTo} />
       <WhatsAppButton />
       <AccessibilityWidget />
+      <CookieConsent onNavigate={navigateTo} />
     </div>
   );
 };
