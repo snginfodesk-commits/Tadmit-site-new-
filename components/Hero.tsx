@@ -75,7 +75,7 @@ const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-[calc(50%+10px)] text-navy/30 hidden lg:block animate-bounce">
+      <div className="absolute bottom-10 left-[calc(50%-21px)] -translate-x-1/2 text-navy/30 hidden lg:block animate-bounce">
         <ChevronDown size={40} />
       </div>
     </section>
