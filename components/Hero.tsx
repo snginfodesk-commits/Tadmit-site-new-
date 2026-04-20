@@ -25,14 +25,12 @@ const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
             <span className="text-navy font-black tracking-widest text-xs uppercase">שקיפות, מקצוענות, רווחיות</span>
           </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-navy leading-tight mb-6">
-            צמד ברזל מנקים את עולם ההשקעות <br />
-            <span className="text-gold">מאינטרסים חבויים</span>
+            <span className="text-gold">צמד ברזל</span> <br />
+            מובילים מהפכה בעולם הנדל&quot;ן.
           </h1>
           <p className="text-xl md:text-2xl text-navy/70 leading-relaxed mb-10 max-w-xl">
-            מומחי נדל&quot;ן. נציגי קונים בלעדיים.
-צמד ברזל - ניתוח שוק מעמיק, עסקאות מדויקות, 100% נאמנות לאינטרס שלך.
-עם ניסיון של 75+ עסקאות ו-5 שנות ליווי מקצועי - אנחנו יודעים בדיוק מה לחפש, ומה להימנע ממנו.
-דוגלים בשקיפות מלאה לאורך כל התהליך.
+            צמד ברזל מגדירים מחדש מהי יושרה, מקצועיות ונאמנות ללקוח.
+            ומציבים סטנדרט חדש של ליווי אסטרטגי המבוסס על שקיפות מלאה וניתוח נתונים מדויק.
           </p>
 
           <div>
