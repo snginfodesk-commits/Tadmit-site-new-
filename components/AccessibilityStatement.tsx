@@ -11,7 +11,7 @@ const Section = ({ title, children }: { title: string; children: React.ReactNode
 
 const AccessibilityStatement: React.FC<Props> = ({ onNavigate }) => (
   <div className="min-h-screen bg-offwhite">
-    <div className="bg-navy py-20 text-center">
+    <div className="bg-navy pt-32 md:pt-48 pb-16 md:pb-20 text-center">
       <h1 className="text-4xl md:text-5xl font-black text-white">הצהרת נגישות</h1>
       <p className="text-white/50 mt-4 text-lg">עודכן לאחרונה: ינואר 2025</p>
     </div>
