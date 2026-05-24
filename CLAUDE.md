@@ -7,8 +7,9 @@
 ---
 
 ## פרטי הפרויקט
-- **GitHub:** `Netmi11/Tadmit-site-new-`
-- **Vercel:** מחובר ל-GitHub, מתעדכן אוטומטית בכל push ל-main
+- **GitHub (production):** `snginfodesk-commits/Tadmit-site-new-` (remote: `prod`) — זה ה-repo שמחובר ל-Vercel
+- **GitHub (mirror):** `Netmi11/Tadmit-site-new-` (remote: `origin`)
+- **Vercel:** מחובר ל-`prod`, מתעדכן אוטומטית בכל push ל-`prod/main`
 - **URL:** `ironteam.co.il`
 - **שפה:** עברית, RTL
 
