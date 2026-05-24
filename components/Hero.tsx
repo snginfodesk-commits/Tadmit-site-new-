@@ -9,7 +9,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 pb-12 lg:pb-0 overflow-hidden bg-offwhite">
+    <section id="home" className="relative min-h-[88vh] flex items-start justify-center pt-28 lg:pt-32 pb-12 lg:pb-0 overflow-hidden bg-offwhite">
       {/* Aurora background - temporarily disabled for performance testing */}
 
       <div className="absolute top-0 right-0 w-1/2 h-full bg-navy/5 -skew-x-12 transform translate-x-1/4" />
@@ -45,7 +45,7 @@ const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
         </div>
 
         <div
-          className="relative order-1 lg:order-2 flex items-center justify-center animate-[fadeIn_1s_ease-out_0.2s_both]"
+          className="relative order-1 lg:order-2 hidden lg:flex items-center justify-center animate-[fadeIn_1s_ease-out_0.2s_both]"
         >
           <div
             className="relative z-10 max-w-[428px] sm:max-w-[524px] lg:max-w-[571px] mx-auto w-full translate-y-[30px] lg:translate-y-0 lg:translate-x-[30px]"

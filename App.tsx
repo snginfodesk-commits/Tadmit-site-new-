@@ -33,6 +33,16 @@ import {
   ClipboardCheck, Search, Building, Key, Target, ArrowLeft, ShieldCheck
 } from 'lucide-react';
 
+const PATH_TO_PAGE: Record<string, string> = {
+  '/privacy-policy': 'privacy',
+  '/terms-of-service': 'terms',
+};
+
+const PAGE_TO_PATH: Record<string, string> = {
+  privacy: '/privacy-policy',
+  terms: '/terms-of-service',
+};
+
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState('home');
 
@@ -89,19 +99,33 @@ const App: React.FC = () => {
   const navigateTo = useCallback((page: string) => {
     const cleanPage = page.replace('#', '');
     setCurrentPage(cleanPage);
-    window.history.pushState(null, '', `#${cleanPage}`);
+    const pathUrl = PAGE_TO_PATH[cleanPage];
+    if (pathUrl) {
+      window.history.pushState(null, '', pathUrl);
+    } else {
+      window.history.pushState(null, '', `/#${cleanPage}`);
+    }
   }, []);
 
   useEffect(() => {
-    const handleHashChange = () => {
+    const handleRouteChange = () => {
+      const pathPage = PATH_TO_PAGE[window.location.pathname];
+      if (pathPage) {
+        setCurrentPage(pathPage);
+        return;
+      }
       const hash = window.location.hash.replace('#', '') || 'home';
       setCurrentPage(hash);
     };
 
-    window.addEventListener('hashchange', handleHashChange);
-    handleHashChange(); // Initial check
+    window.addEventListener('hashchange', handleRouteChange);
+    window.addEventListener('popstate', handleRouteChange);
+    handleRouteChange(); // Initial check
 
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    return () => {
+      window.removeEventListener('hashchange', handleRouteChange);
+      window.removeEventListener('popstate', handleRouteChange);
+    };
   }, []);
 
   const AnimatedCounter: React.FC<{ value: number; suffix: string; label: string }> = ({ value, suffix, label }) => {
@@ -341,6 +365,20 @@ const App: React.FC = () => {
                       desc: '6 מוקשים שיכולים לפוצץ את העסקה ברגע האחרון - ואיך להימנע מהם. מדריך פרקטי בעברית פשוטה.',
                       pages: 7,
                       slug: 'mortgage-mistakes',
+                    },
+                    {
+                      icon: <FileText size={32} />,
+                      title: 'הסעיפים שמגנים עליך כשמשכירים לטווח ארוך',
+                      desc: 'כל הסעיפים שצריכים להיות בחוזה שכירות לטווח ארוך - בלי טעויות שיעלו לך אלפי שקלים.',
+                      pages: 5,
+                      slug: 'long-term-rental',
+                    },
+                    {
+                      icon: <Target size={32} />,
+                      title: 'איך לנצח במלחמה על הדירה',
+                      desc: '6 כללי ברזל לשוכר בשוק תחרותי. מה להכין לפני הביקור, איך להתנהג בו, ומתי להחליט - כדי לסגור דירה לפני כולם.',
+                      pages: 6,
+                      slug: 'rent-war',
                     },
                   ].map((g, idx) => (
                     <motion.a
