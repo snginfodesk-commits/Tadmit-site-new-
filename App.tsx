@@ -373,6 +373,13 @@ const App: React.FC = () => {
                       pages: 5,
                       slug: 'long-term-rental',
                     },
+                    {
+                      icon: <Target size={32} />,
+                      title: 'איך לנצח במלחמה על הדירה',
+                      desc: '6 כללי ברזל לשוכר שכל בעל דירה רוצה לראות. איך להגיע מוכן, להישמע אמין ולסגור דירה לפני כולם.',
+                      pages: 6,
+                      slug: 'rent-war',
+                    },
                   ].map((g, idx) => (
                     <motion.a
                       key={idx}
