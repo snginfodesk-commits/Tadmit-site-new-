@@ -30,7 +30,7 @@ const CountUp = lazy(() => import('./components/CountUp'));
 import {
   FileText, Download, MessageCircle, Phone, Mail, Play,
   CheckCircle, Shield, Briefcase, Users, History, Gem, Handshake,
-  ClipboardCheck, Search, Building, Key, Target, ArrowLeft, ShieldCheck
+  ClipboardCheck, Search, Building, Key, Target, ArrowLeft, ShieldCheck, BookOpen
 } from 'lucide-react';
 
 const PATH_TO_PAGE: Record<string, string> = {
@@ -379,6 +379,13 @@ const App: React.FC = () => {
                       desc: '6 כללי ברזל לשוכר בשוק תחרותי. מה להכין לפני הביקור, איך להתנהג בו, ומתי להחליט - כדי לסגור דירה לפני כולם.',
                       pages: 6,
                       slug: 'rent-war',
+                    },
+                    {
+                      icon: <BookOpen size={32} />,
+                      title: '10 הספרים שכל משקיע חייב לקרוא',
+                      desc: 'רשימת קריאה מובחרת בנושאי התפתחות פיננסית, חשיבה אישית ונדל"ן - מ"אבא עשיר אבא עני" ועד The Millionaire Fastlane.',
+                      pages: 11,
+                      slug: 'book-list',
                     },
                   ].map((g, idx) => (
                     <motion.a
