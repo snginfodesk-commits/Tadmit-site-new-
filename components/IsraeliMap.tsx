@@ -184,10 +184,6 @@ const IsraeliMap: React.FC = () => {
                       <p className="font-black text-lg text-white/90 leading-tight">{city.name}</p>
                       <p className="text-sm text-white/40 mt-0.5 truncate">{city.desc}</p>
                     </div>
-                    <span className="text-xs font-black px-2.5 py-1 rounded-full flex-shrink-0"
-                      style={{ background: `${city.color}22`, color: city.color }}>
-                      {city.deals} עסקאות
-                    </span>
                   </motion.div>
                 ))}
               </div>
@@ -259,13 +255,6 @@ const IsraeliMap: React.FC = () => {
                         className="overflow-hidden"
                       >
                         <div className="px-4 pb-4 pt-3 text-right" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-                          <div className="flex flex-wrap gap-1.5 justify-end mb-2">
-                            <span className="text-xs font-bold px-2.5 py-1 rounded-full"
-                              style={{ background: `${city.color}22`, color: city.color, border: `1px solid ${city.color}30` }}>
-                              {city.deals} עסקאות מוצלחות
-                            </span>
-
-                          </div>
                           <div className="flex flex-wrap gap-1 justify-end">
                             {city.highlights.map((h, idx) => (
                               <span key={idx} className="text-xs font-bold px-2 py-1 rounded-full bg-white/5 text-white/65 border border-white/10">
