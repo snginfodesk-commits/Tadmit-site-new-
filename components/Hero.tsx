@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ChevronDown, Send, ShieldCheck } from 'lucide-react';
+import { Send, ShieldCheck } from 'lucide-react';
 import TiltedCard from './TiltedCard';
 
 interface HeroProps {
@@ -36,7 +36,7 @@ const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
           <div className="flex justify-center lg:justify-end">
             <button
               onClick={() => navigateTo('contact-page')}
-              className="bg-gold text-navy px-10 py-5 rounded-2xl font-black text-lg flex items-center justify-center gap-3 transition-all hover:scale-[1.02] hover:shadow-2xl hover:shadow-gold/20"
+              className="bg-gold text-navy px-10 py-5 rounded-2xl font-black text-lg flex items-center justify-center gap-3 transition-all hover:scale-[1.02] hover:shadow-2xl hover:shadow-gold/20 lg:-translate-y-2 lg:translate-x-2"
             >
               לשיחת ייעוץ לחץ כאן
               <Send size={20} />
@@ -65,10 +65,6 @@ const Hero: React.FC<HeroProps> = ({ navigateTo }) => {
           <div className="absolute -top-12 -right-12 w-48 h-48 border border-gold/10 rounded-full -z-10 animate-[spin_20s_linear_infinite]" />
           <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-gold/10 rounded-full blur-[100px] -z-10 animate-pulse" />
         </div>
-      </div>
-
-      <div className="absolute bottom-10 left-[calc(50%-21px)] -translate-x-1/2 text-navy/30 hidden lg:block animate-bounce">
-        <ChevronDown size={40} />
       </div>
     </section>
   );
