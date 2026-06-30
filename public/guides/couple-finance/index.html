@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>מדריך פיננסי זוגי - 4 שאלות לכל זוג — צמד ברזל</title>
+<link rel="stylesheet" href="../_styles.css">
+</head>
+<body>
+<main class="guide-page">
+  <header class="guide-hero">
+    <span class="badge">מדריך חינמי</span>
+    <h1>4 השאלות שכל זוג חייב לענות עליהן לפני שמדברים על כסף</h1>
+    <p class="subtitle">מדריך קצר לזוגות שמסתדרים מצוין, אבל אף פעם לא ממש דיברו על הכסף. שבו ביחד, כוס קפה, וגלו יותר על הכסף שלכם בחצי שעה.</p>
+  </header>
+
+  <section id="formState" class="guide-form-wrap">
+    <form id="guideForm" novalidate>
+      <label for="nameInput">שם מלא</label>
+      <input id="nameInput" name="name" type="text" required placeholder="ישראלה ישראלית">
+
+      <label for="emailInput">אימייל</label>
+      <input id="emailInput" name="email" type="email" required placeholder="you@example.com">
+
+      <label class="checkbox-label">
+        <input id="termsCheckbox" type="checkbox">
+        <span>אני מאשר/ת לקבל מיילים מצמד ברזל בנושא השקעות נדל"ן, הרצאות וקורסים. ניתן להסיר את ההרשמה בכל עת.</span>
+      </label>
+      <div id="checkboxError" class="error-msg" style="display:none">חובה לאשר כדי לקבל את המדריך.</div>
+
+      <button id="submitBtn" type="submit">שלחו לי את המדריך ←</button>
+    </form>
+  </section>
+
+  <section id="successState" class="guide-success">
+    <h2>✓ המדריך בדרך אליך</h2>
+    <p>בדקו את תיבת המייל. אם הוא לא הגיע תוך 2-3 דקות — תבדקו גם בתיבת ספאם.</p>
+  </section>
+</main>
+
+<script>
+  window.GUIDE_CONFIG = {
+    slug: 'couple-finance',
+    title: 'מדריך פיננסי זוגי - 4 שאלות לכל זוג',
+    pdfUrl: 'https://drive.google.com/file/d/1QWG3hpGsR1Hw_sZ0McmVXcInbdBw7oCZ/view'
+  };
+</script>
+<script src="../_form.js"></script>
+</body>
+</html>

@@ -401,6 +401,13 @@ const App: React.FC = () => {
                       pages: 6,
                       slug: 'yad2-deal-signs',
                     },
+                    {
+                      icon: <Handshake size={32} />,
+                      title: '4 השאלות שכל זוג חייב לענות על הכסף',
+                      desc: 'מדריך קצר לזוגות שמסתדרים מצוין אבל אף פעם לא דיברו על הכסף - 4 שאלות שיפתחו את השיחה החשובה ביחד, בחצי שעה.',
+                      pages: 7,
+                      slug: 'couple-finance',
+                    },
                   ].map((g, idx) => (
                     <motion.a
                       key={idx}
