@@ -1,50 +1,77 @@
 <!DOCTYPE html>
-<html dir="rtl" lang="he">
+<html lang="he-IL" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>מדריך פיננסי זוגי - 4 שאלות לכל זוג — צמד ברזל</title>
-<link rel="stylesheet" href="../_styles.css">
+<title>4 השאלות שכל זוג חייב לענות עליהן לפני שמדברים על כסף | צמד ברזל</title>
+<meta name="description" content="מדריך חינמי לזוגות - 4 השאלות שכל זוג חייב לענות עליהן לפני שמדברים על כסף. פותחים את השיחה החשובה ביחד, בחצי שעה.">
+<link rel="canonical" href="https://www.ironteam.co.il/guides/couple-finance">
+<meta property="og:title" content="4 השאלות שכל זוג חייב לענות עליהן לפני שמדברים על כסף | צמד ברזל">
+<meta property="og:description" content="מדריך קצר לזוגות שמסתדרים מצוין אבל אף פעם לא ממש דיברו על הכסף.">
+<meta property="og:locale" content="he_IL">
+<meta property="og:site_name" content="צמד ברזל">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="/guides/_styles.css">
 </head>
 <body>
-<main class="guide-page">
-  <header class="guide-hero">
-    <span class="badge">מדריך חינמי</span>
-    <h1>4 שאלות שיפתחו לכם את השיחה על הכסף - סוף סוף, ביחד</h1>
-    <p class="subtitle">מדריך קצר לזוגות שמסתדרים מצוין, אבל אף פעם לא ממש דיברו על הכסף. שבו ביחד, כוס קפה, וגלו יותר על הכסף שלכם בחצי שעה.</p>
-  </header>
+<div class="bg-orb-gold"></div>
+<div class="bg-orb-navy"></div>
 
-  <section id="formState" class="guide-form-wrap">
-    <form id="guideForm" novalidate>
-      <label for="nameInput">שם מלא</label>
-      <input id="nameInput" name="name" type="text" required placeholder="ישראלה ישראלית">
+<div class="page-shell">
+  <div class="card">
+    <a href="/#value" class="back-link">← חזרה לכל המדריכים</a>
 
-      <label for="emailInput">אימייל</label>
-      <input id="emailInput" name="email" type="email" required placeholder="you@example.com">
+    <div class="form-state" id="formState">
+      <h1>4 השאלות שכל זוג חייב לענות עליהן לפני שמדברים על כסף</h1>
+      <p class="subtitle">מדריך קצר לזוגות שמסתדרים מצוין, אבל אף פעם לא ממש דיברו על הכסף. שבו ביחד, כוס קפה, וגלו יותר על הכסף שלכם בחצי שעה מאשר בשנה של "כמה נשאר בעו"ש".</p>
+      <div class="meta">📄 7 עמודים · PDF · בעברית</div>
 
-      <label class="checkbox-label">
-        <input id="termsCheckbox" type="checkbox">
-        <span>אני מאשר/ת לקבל מיילים מצמד ברזל בנושא השקעות נדל"ן, הרצאות וקורסים. ניתן להסיר את ההרשמה בכל עת.</span>
-      </label>
-      <div id="checkboxError" class="error-msg" style="display:none">חובה לאשר כדי לקבל את המדריך.</div>
+      <form class="guide-form" id="guideForm" novalidate>
+        <div class="form-field">
+          <input type="text" id="nameInput" name="name" placeholder="שם פרטי" required autocomplete="given-name">
+          <div class="error-msg">נא להזין שם</div>
+        </div>
+        <div class="form-field">
+          <input type="email" id="emailInput" name="email" placeholder="כתובת אימייל" required autocomplete="email" dir="ltr" style="text-align: right;">
+          <div class="error-msg">נא להזין אימייל תקין</div>
+        </div>
+        <label class="checkbox-wrap">
+          <input type="checkbox" id="termsCheckbox" required>
+          <span class="checkbox-box">
+            <svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg>
+          </span>
+          <span class="checkbox-label">
+            אני מאשר/ת לקבל את המדריך למייל ועדכונים נוספים מצמד ברזל. ניתן להסיר את ההרשמה בכל עת.
+          </span>
+        </label>
+        <div class="checkbox-error" id="checkboxError">יש לאשר את התנאים כדי להמשיך</div>
+        <button type="submit" class="submit-btn" id="submitBtn">שלחו לי את המדריך</button>
+      </form>
+    </div>
 
-      <button id="submitBtn" type="submit">שלחו לי את המדריך ←</button>
-    </form>
-  </section>
-
-  <section id="successState" class="guide-success">
-    <h2>✓ המדריך בדרך אליך</h2>
-    <p>בדקו את תיבת המייל. אם הוא לא הגיע תוך 2-3 דקות — תבדקו גם בתיבת ספאם.</p>
-  </section>
-</main>
+    <div class="success-state" id="successState">
+      <div class="success-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <polyline points="22,4 12,13 2,4"/>
+        </svg>
+      </div>
+      <h2>שלחנו לכם את המדריך למייל</h2>
+      <p>המדריך אמור להגיע תוך דקה או שתיים. אם לא רואים - שווה לבדוק גם בתיקיית הספאם.</p>
+      <a href="/#value" class="success-cta">חזרה למדריכים</a>
+    </div>
+  </div>
+</div>
 
 <script>
-  window.GUIDE_CONFIG = {
-    slug: 'couple-finance',
-    title: 'מדריך פיננסי זוגי - 4 שאלות לכל זוג',
-    pdfUrl: 'https://drive.google.com/file/d/1QWG3hpGsR1Hw_sZ0McmVXcInbdBw7oCZ/view'
-  };
+window.GUIDE_CONFIG = {
+  slug: 'couple-finance',
+  title: 'מדריך פיננסי זוגי - 4 שאלות לכל זוג',
+  pdfUrl: 'https://drive.google.com/file/d/1QWG3hpGsR1Hw_sZ0McmVXcInbdBw7oCZ/view'
+};
 </script>
-<script src="../_form.js"></script>
+<script src="/guides/_form.js"></script>
 </body>
 </html>
