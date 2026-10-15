@@ -4,6 +4,9 @@ import { motion } from 'framer-motion';
 import { Send } from 'lucide-react';
 
 const N8N_WEBHOOK_URL = 'https://n8n.srv1270696.hstgr.cloud/webhook/594e4a2d-bc43-4f4d-9f5a-02f28afc9754';
+// The new CRM (ironteam-crm, Supabase): public write-only lead intake. Sent in
+// parallel with the old n8n flow, so nothing is lost while both run.
+const CRM_LEAD_URL = 'https://ironteam-crm.vercel.app/api/lead-create';
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', phone: '' });
@@ -12,6 +15,11 @@ const ContactForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
+    const crm = fetch(CRM_LEAD_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: formData.name, phone: formData.phone, source: 'אתר תדמית', page: 'contact' }),
+    }).catch(() => null);
     try {
       await fetch(N8N_WEBHOOK_URL, {
         method: 'POST',
@@ -23,6 +31,7 @@ const ContactForm: React.FC = () => {
           source: 'ironteam.co.il',
         }),
       });
+      await crm;
       setStatus('success');
       setFormData({ name: '', phone: '' });
     } catch {
